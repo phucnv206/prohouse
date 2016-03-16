@@ -1,0 +1,30 @@
+.liquid {
+}
+.liquid .previous {
+margin-top: 32px;	display:block;
+	height:126px;
+	width:64px;
+	background-image:url('/Content/new_images/Shape-1-copy.png');
+    background-repeat:no-repeat;
+	float:left;
+	padding:0;
+}
+.liquid .next {
+margin-top: 32px;	display:block;
+	height:126px;
+	width:64px;
+	background-image:url('/Content/new_images/Shape-1.png');
+    background-repeat:no-repeat;
+	float:right;
+
+	padding:0;
+}
+.liquid ul li {
+	width:200px;
+	padding:0 2px;
+	margin:0;
+    /*margin-right:50px !important;*/
+}
+.liquid ul li a img {
+	
+}

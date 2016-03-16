@@ -1,0 +1,478 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prohouse</title>
+    <link href="/Content/new_css/style_new.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="/Content/new_menu/script.js"></script>
+    <link href="/Content/new_menu/styles.css" rel="stylesheet" />
+    <link href="Content/new_css/my_style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 head-left"><a title="HOTLINE"><span style="color:white">BinhAnPearl <span style="color:#7c7c7c"> | </span> Cape Pearl <span style="color:#7c7c7c"> | </span> SaiGon Pearl</span></a></div>
+                    <div class="col-md-5 col-xs-12 head-right">
+                        <ul>
+                            <li><a title="" href="#">Hotline: <span style="color:#2196f5">0917 187 909</span></a></li>
+                            <li><a title="" href="#">About <span style="color:#7c7c7c">|</span></a></li>
+                            <li class="last"><a title="" href="#">Contact</a></li>
+                            <li>
+                                <img src="Content/new_images/us.png" />
+                                <img src="Content/new_images/vn.png" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 logo">
+                        <a title="Prohouse" style="cursor:pointer" href="/"><img alt="logo" src="/Content/new_images/logo.png" /></a>
+                    </div>
+
+                    <div class="col-md-offset-2 col-md-7  main-menu" id='cssmenu'>
+                        <ul>
+                            <li>
+                                <a title="TRANG CHỦ" href="/">
+                                    FOR RENT
+                                </a>
+
+                            </li>
+                            <li>
+                                <a title="K&#205;NH M&#193;T" href="/errorpage">FOR SALE</a>
+                            </li>
+                            <li>
+                                <a title="GỌNG K&#205;NH" href="/errorpage">APARTMENT</a>
+                            </li>
+                            <li>
+                                <a title="TR&#210;NG K&#205;NH" href="/errorpage">OFFICE</a>
+                            </li>
+                            <li>
+                                <a title="K&#205;NH &#193;P TR&#210;NG" href="/errorpage">HOUSE</a>
+                            </li>
+
+                            <li>
+                                <a title="Tìm kiếm" href="#">
+                                    <img src="/Content/new_images/magnifier12.png" />
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <script type="text/javascript" src="/Content/sliderbanner/js/jssor.slider.mini.js"></script>
+
+
+
+
+    <script src="/Content/slider_ft_liquid/jquery.liquidcarousel.pack.js"></script>
+    <link href="/Content/slider_ft_liquid/liquidcarousel.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+		$(document).ready(function() {
+			$('#liquid1').liquidcarousel({duration:1000, hidearrows:true});
+		});
+
+    </script>
+
+    <!-- use jssor.slider.debug.js instead for debug -->
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_SlideoTransitions = [
+              [{b:5500,d:3000,o:-1,r:240,e:{r:2}}],
+              [{b:-1,d:1,o:-1,c:{x:51.0,t:-51.0}},{b:0,d:1000,o:1,c:{x:-51.0,t:51.0},e:{o:7,c:{x:7,t:7}}}],
+              [{b:-1,d:1,o:-1,sX:9,sY:9},{b:1000,d:1000,o:1,sX:-9,sY:-9,e:{sX:2,sY:2}}],
+              [{b:-1,d:1,o:-1,r:-180,sX:9,sY:9},{b:2000,d:1000,o:1,r:180,sX:-9,sY:-9,e:{r:2,sX:2,sY:2}}],
+              [{b:-1,d:1,o:-1},{b:3000,d:2000,y:180,o:1,e:{y:16}}],
+              [{b:-1,d:1,o:-1,r:-150},{b:7500,d:1600,o:1,r:150,e:{r:3}}],
+              [{b:10000,d:2000,x:-379,e:{x:7}}],
+              [{b:10000,d:2000,x:-379,e:{x:7}}],
+              [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:9100,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:10000,d:1600,x:-200,o:-1,e:{x:16}}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+
+            .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                position: absolute;
+                /* size of bullet elment */
+                width: 16px;
+                height: 16px;
+                background: url('/Content/sliderbanner/img/b05.png') no-repeat;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .jssorb05 div {
+                background-position: -7px -7px;
+            }
+
+                .jssorb05 div:hover, .jssorb05 .av:hover {
+                    background-position: -37px -7px;
+                }
+
+            .jssorb05 .av {
+                background-position: -67px -7px;
+            }
+
+            .jssorb05 .dn, .jssorb05 .dn:hover {
+                background-position: -97px -7px;
+            }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('/Content/sliderbanner/img/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+
+        .jssora22l {
+            background-position: -10px -31px;
+        }
+
+        .jssora22r {
+            background-position: -70px -31px;
+        }
+
+        .jssora22l:hover {
+            background-position: -130px -31px;
+        }
+
+        .jssora22r:hover {
+            background-position: -190px -31px;
+        }
+
+        .jssora22l.jssora22ldn {
+            background-position: -250px -31px;
+        }
+
+        .jssora22r.jssora22rdn {
+            background-position: -310px -31px;
+        }
+    </style>
+
+
+
+    <div class="slider">
+
+
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">
+            <!-- Loading Screen -->
+            <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                <div style="position:absolute;display:block;background:url('~/Content/sliderbanner/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+            </div>
+            <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                <div data-p="225.00" style="display: none;">
+                    <img data-u="image" src="/Content/new_images/slid.png" />
+
+
+                </div>
+                <div data-p="225.00" style="display: none;">
+                    <img data-u="image" src="/Content/sliderbanner/img/purple.jpg" />
+                </div>
+                <div data-p="225.00" style="display: none;">
+                    <img data-u="image" src="/Content/sliderbanner/img/blue.jpg" />
+                </div>
+
+            </div>
+            <!-- Bullet Navigator -->
+            <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+                <!-- bullet navigator item1 prototype -->
+                <div data-u="prototype" style="width:16px;height:16px;"></div>
+            </div>
+            <!-- Arrow Navigator -->
+            <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
+            <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
+            <a href="http://www.jssor.com" style="display:none">Slideshow Maker</a>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="menu-content">
+            <ul>
+                <li><a href="#">overview</a></li>
+                <li><a href="#">location</a></li>
+                <li><a href="#">facilities</a></li>
+                <li><a href="#">interior $ layout</a></li>
+                <li><a href="#">construction progress</a></li>
+                <li><a href="#">payment schedule</a></li>
+                <li><a href="#">contact us</a></li>
+            </ul>
+        </div>
+        <div class="menu-tab">
+        <p>
+<div>
+	<strong><span style="font-size:14px;"><span style="color:#000000;">Tên dự án:<a href="http://tanphuocland.vn/"> KHU CĂN HỘ TÂN PHƯỚC </a>&nbsp;(TANPHUOC PLAZA)</span></span></strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">&nbsp;<strong>Chủ đầu tư: CÔNG TY CP BĐS TÂN PHƯỚC</strong></span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">- Đơn vị thi công: công ty cổ phần XD số 5 thành viên của Tổng công ty xây dựng số (1 CC1)</span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">- Địa Chỉ : 153 Lý Thường&nbsp; Kiệt, Phường 7, Quận 11<br>
+	- Vị trí dự án: Nằm Ngay Trung Tâm của khu tứ giác vàng thương mại sầm uất phát triển lâu đời được mệnh danh như khu trung tâm của Long mạch : Mặt Tiền đường Lý Thường Kiệt, Lý Nam Đế, Vĩnh Viễn, Tân Phước.</span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong><span style="font-size:14px;"><span style="color:#000000;">&nbsp;TỔNG QUAN&nbsp; DỰ ÁN&nbsp;</span></span></strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">-Tổng diện tích đất: 11.417 (đã trừ lộ giới)</span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">-Diện tích xây dựng: 4.229 m2, Mật độ&nbsp; 37.04%</span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">-Diện tích&nbsp; cây xanh: 3.245 m2, chiếm 28.42%</span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">-Diện tích Dường nội khu - sân bãi: 3.943 m2, chiếm 34.54%</span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">-Gồm 8 tầng thương mại 2 Lock A&amp;B</span></span></div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;">-Có 2 Hầm để xe thông nhau 3 Block:18.413 m2 </span></span></div>
+<h3>
+	&nbsp;</h3>
+<h3>
+	<strong>QUY MÔ DỰ ÁN CĂN HỘ TÂN PHƯỚC&nbsp;</strong></h3>
+<div>
+	&nbsp;</div>
+<div>
+	<strong><span style="font-size:14px;"><span style="color:#000000;">Gồm 3 Block A,B và C</span></span></strong></div>
+<div>
+	<span style="color: rgb(0, 0, 0); font-size: 14px;">●</span><strong style="color: rgb(0, 0, 0); font-size: 14px;"> Tân Phước A,B &nbsp;:&nbsp;</strong></div>
+<div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<span style="font-size:14px;"><span style="color:#000000;">- Cao 27 tầng: 2 tầng hầm để xe cao 4.2m, với 4 tầng thương mại cao 4.7m,1 tầng kỹ thuật,và 21 tầng căn hộ thương mại, mỗi tầng&nbsp; cao 3.2m, và 1 tầng penhouse cao 7m (diện tích Penhouse 180m2)</span></span></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<span style="font-size:14px;"><span style="color:#000000;"><strong>● Tân Phước C :&nbsp;</strong> </span></span></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<span style="font-size:14px;"><span style="color:#000000;">- Cao 25 tầng: 2 hầm để xe, tầng trệt là khu Nhà sinh hoạt cộng đồng, tầng 2 là khu nhà trẻ IVY Kid và 23 tầng căn hộ ( thuộc phân khu Tái định cư.</span></span></div>
+</div>
+<div>
+	<span style="font-size:14px;"><a href="http://tanphuocland.vn/du-an-bat-dong-san/can-ho-tan-phuoc/15" title="can ho tan phuoc"><span style="color:#000000;">can ho tan phuoc</span></a></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="color:#000000;"><img alt="can ho tan phuoc" src="http://blueskyland.net/Uploads/images/project/0603/can%20ho%20tan%20phuoc.jpg" style="width: 750px; height: 330px;"></span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong><font color="#000000"><span style="font-size: 14px;">VỊ TRÍ DỰ ÁN CĂN HỘ TÂN PHƯỚC&nbsp;</span></font></strong></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;"><b>-</b> Nằm ngay vị trí trung tâm 4 mặt tiền đường Lý Thường Kiệt - Tân Phước - Lý Nam Đế - Vĩnh Viễn , có vị trí hết sức đắc đia, được ví như Long Mạch của trung tâm quận 11, nơi có vị trí và truyền thống giao thương tấp nập và sầm uất của các Hoa Kiều, tạo nên giá &nbsp;trị cho khu đất trở nên đắt giá như Vàng.</span></font></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;">&nbsp;</span></font></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;">- Từ Căn hộ Tân Phước có thể di chuyển nhanh chóng đến các vị trí như :</span></font></div>
+<div>
+	&nbsp;</div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;">* <strong>10 Phút </strong>đến trung tâm Quận 1&nbsp;</span></font></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;">* &nbsp;<strong>5 &nbsp;Phút </strong>đến trung tâm giao thương sầm uất các chợ sỉ ( Chợ Bình Tây, Chợ Soái Kình Lâm, Chợ An Đông, Chợ Thiếc...)</span></font></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;">* &nbsp;<strong>2 Phút</strong> nhanh chóng đến các khu trung tâm thương mại ( Parkson Hùng Vương , Parkson Flemington , Lottemark The Everich ....)</span></font></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;">* <strong>10 Phút</strong> di chuyển về sân bay quốc tế Tân Sơn Nhất&nbsp;</span></font></div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;"><img alt="vi-tri-can-ho-tan-phuoc" src="http://blueskyland.net/Uploads/images/Vi_tri_can_ho_tan_phuoc.png" style="width: 690px; height: 507px;"></span></font></div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong><font color="#000000"><span style="font-size: 14px;">TIỆN ÍCH CĂN HỘ TÂN PHƯỚC&nbsp;</span></font></strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong><font color="#000000"><span style="font-size: 14px;">-&nbsp;</span></font></strong><font color="#000000"><span style="font-size: 14px;">Với vị trí trung tâm của quận thì các tiện ích phục vụ cho cư dân hầu như chỉ trong bán kính 1-2km , rất tiện lợi khi các dịch vụ ngay bên cạnh, Tân Phước Plaza không chỉ là nơi ở mà còn là nơi trải nghiệm những dịch vụ tối ưu nhất</span></font></div>
+<div>
+	&nbsp;</div>
+<div>
+	<font color="#000000"><span style="font-size: 14px;"><img alt="" src="http://blueskyland.net/Uploads/images/project/tien-ich-can-ho-tan-phuoc.png" style="width: 690px; height: 471px;"></span></font></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong><font color="#000000"><span style="font-size: 14px;">LÝ DO VÌ SAO CĂN HỘ TÂN PHƯỚC ĐƯỢC RẤT NHIỀU KHÁCH HÀNG LỰA CHỌN LÀ NƠI AN CƯ PHÁT NGHIỆP</span></font></strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="font-family:arial,times,serif;">- Chắc hẳn ai cũng băn khoăn không hiểu lý do tại sao &nbsp;&nbsp;<a href="http://tanphuocland.vn/bat-dong-san/tin-du-an/sap-mo-ban-trung-tam-thuong-mai-tan-phuoc-plaza-109.html">căn hộ tân phước</a>&nbsp; được đa số khách hàng lựa chọn ?</span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="font-family:arial,times,serif;">1. Vị trí ngay trung tâm rất thuận tiện cho khách hàng sinh sống và làm việc và tiết kiệm được rất nhiều thời gian di chuyển</span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="font-family:arial,times,serif;">2. Căn hộ đang trong giai đoạn hoàn thiện và giao nhà vào tháng 7 -2015 ( hiện nay khách hàng đã vào để Decor nội thất ) đây chính là lý do chính căn hộ tân phước thu hút khách hàng, vì khách hàng không phải chờ đợi nhà lâu so với những dự án khác.</span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="font-family:arial,times,serif;">3. Giá của căn hộ đang là giá rẻ nhất khu vực chỉ từ 27 Triệu/ m2 , với giá này thì khách hàng đã rất hời khi ở trung tâm&nbsp;</span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="font-family:arial,times,serif;">4. Với thiết kế tổng thể căn hộ theo phong cách bán cổ điển, mang âm hưởng của một châu âu thu nhỏ như một Paris giữa lòng sài gòn.</span></span></div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="font-size:14px;"><span style="font-family:arial,times,serif;">5. Chủ đầu tư uy tín&nbsp;</span></span></div>
+<h3>
+	&nbsp;</h3>
+<h3>
+	<strong>MẶT BẰNG CĂN HỘ TÂN PHƯỚC&nbsp;</strong></h3>
+<p>
+	<strong><img alt="mat-bang-can-ho-tan-phuoc" src="http://blueskyland.net/Uploads/images/Can-ho-Tan-Phuoc-mat-bang(1).jpg" style="width: 690px; height: 457px;"></strong></p>
+<h3>
+	&nbsp;</h3>
+<h3>
+	<strong>THIẾT KẾ CĂN HỘ TÂN PHƯỚC ĐA DẠNG DIỆN CHO KHÁCH HÀNG LỰA CHỌN ( TỪ 1-2-3 PHÒNG NGỦ )</strong></h3>
+<p>
+	<strong><img alt="căn 53,6m2 căn hộ tân phước" src="http://blueskyland.net/Uploads/images/can_53,06m2_Can_ho_tan_phuoc.jpg" style="width: 690px; height: 495px;"></strong></p>
+<p>
+	<strong><img alt="" src="http://blueskyland.net/Uploads/images/can_69,38m2_can_ho_tan_phuoc.jpg" style="width: 690px; height: 483px;"></strong></p>
+<p>
+	<strong><img alt="" src="http://blueskyland.net/Uploads/images/74,06M2.jpg" style="width: 690px; height: 488px;"></strong></p>
+<p>
+	<strong><img alt="" src="http://blueskyland.net/Uploads/images/can_76,66m2_can_ho_tan_phuoc.jpg" style="width: 690px; height: 493px;"></strong></p>
+<p>
+	<strong><img alt="" src="http://blueskyland.net/Uploads/images/can_108,9m2_can_ho_tan_phuoc.jpg" style="width: 690px; height: 487px;"></strong></p>
+<p>
+	<span style="font-size:24px;"><b>PHƯƠNG THỨC THANH TOÁN CĂN HỘ TÂN PHƯỚC&nbsp;</b></span></p>
+<p>
+	<span style="font-size:24px;"><b>ĐỢT 1 : ĐẶT CỌC - 50.000.000 VND</b></span></p>
+<p>
+	<span style="font-size:24px;"><b>ĐỢT 2 : 5 ngày sau TT 35% giá trị hợp đồng&nbsp;</b></span></p>
+<p>
+	<span style="font-size:24px;"><b>ĐỢT 3 : Thanh toán 35% giá trị hợp đồng ( Sau 2 tháng từ đợt 1 )</b></span></p>
+<p>
+	<span style="font-size:24px;"><b>ĐỢT 4 : Nhận nhà thanh toán 27% giá trị hợp đồng + 2% Phí Bảo Trì&nbsp;</b></span></p>
+<p>
+	<span style="font-size:24px;"><b>ĐỢT 5 : Khi nhận chủ quyền nhà Thanh toán 3% giá trị hợp đồng&nbsp;</b></span></p>
+<p style="text-align: center;">
+	<span style="font-size:16px;"><span style="color:#ff0000;"><em><b>(Phương thức thanh toán trên có hiệu lực từ ngày 01/01/2015 khi có thay đổi mới )</b></em></span></span></p>
+<p style="text-align: center;">
+	<font color="#ff0000"><span style="font-size: 16px;"><b><i>CHỦ ĐẦU TƯ TÂN PHƯỚC TỰ HÀO MANG ĐẾN GIÁ TRỊ AN CƯ - PHÁT NGHIỆP&nbsp;</i></b></span></font></p>
+<p></p>
+                </p>
+        </div>
+    </div>
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="ft-bottom">
+                <p style="text-align:left;float:left;margin-top:5px;"><a title="Copyright" style=" color:white">Copyrights © 2016 Prohouse. All Rights Reserved</a></p>
+                <p style="float:right">
+                    <a title="Coypright" style="color:white">
+                        Tell: 0917 187 909 - Email: info@prohouse.vn
+                        <img src="Content/new_images/gplus.png" />
+                        <img src="Content/new_images/fb.png" />
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Chrome","requestId":"59944ebf38bc4ae984c9124224bdd5d5"}
+    </script>
+    <script type="text/javascript" src="http://localhost:17002/1f88b729b79f4b2791699bc481f23c21/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>

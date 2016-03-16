@@ -1,0 +1,196 @@
+﻿
+.col-left{
+    margin-top:15px;
+    padding-left:0px;
+}
+.module-name{
+    border-bottom: 2px solid #2196f3;
+}
+.module-name a{
+        background: #2196f3;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 3px 20px;
+}
+.dieu_huong{
+    float:right;
+    margin-top:-2px;
+}
+.btn{
+    padding:2px 10px;
+}
+.moule-show{
+    padding:0px;
+}
+.moule-show, .module-relate{
+    margin-top:10px;
+    margin-bottom:35px;
+}
+.moule-show .news-img{
+    height:233px;
+}
+.moule-show .news-img img{
+    max-width:100%;
+    height:100%;
+    width:100%;
+}
+.moule-show .des{
+
+}
+.moule-show .des .news-name{
+
+}
+.moule-show .des .news-name a{
+    color:#000;
+    font-size:18px;
+}
+.moule-show .des .news-readmore p{
+    color:#d7d7d7
+}
+.module-relate{
+    padding-right:0px;
+}
+.module-relate .module-item{
+        height: 80px;
+        margin-bottom:15px;
+}
+.module-relate .module-item .module-item-img{
+    padding-right:0px;
+    height:80px;
+}
+.module-relate .module-item .module-item-img img{
+    width:100%;
+    height:100%;
+}
+.module-relate .module-item .module-item-des{
+        padding-right: 0px;
+    height: 80px;
+    overflow: hidden;
+}
+.module-relate .module-item .module-item-des .news-name{
+    height: 22px;
+    overflow: hidden;
+}
+.module-relate .module-item .module-item-des .news-name a{
+    color:#000;
+}
+.module-relate .module-item .module-item-des .news-readmore{
+    height: 22px;
+    overflow: hidden;
+}
+ .module-relate .module-item .module-item-des .news-readmore p{
+     color:#d7d7d7;
+ }
+.module{
+    clear:both;
+    margin-top:15px;
+}
+.col-right{
+    margin-top:15px;
+    padding-right:0px;
+}
+.col-right .box-option{
+    padding: 20px 10px;
+    background: #f8f8f8;
+    height: 105px;
+    margin-bottom: 15px;
+
+}
+.col-right .box-option .col6{
+    width:48%;
+    margin-right:2%;
+    float:left;
+
+}
+.col-right .box-option .col7{
+    width:73%;
+    margin-right:2%;
+    float:left;
+}
+.col-right .box-option .col5{
+    width:23%;    
+    float:left;
+}
+.col-right .box-option select{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.box-option .btn{
+    padding:4px 10px;
+    background:#2196f3;
+    border:none;
+    border-radius:unset;
+}
+.qc{
+    margin-bottom:10px;
+}
+.qc img{
+    margin-bottom:20px;
+    width:100%;
+    height:auto;
+}
+.show-news-item{
+    padding-left:0px;    
+}
+.show-news-item .img-news img{
+    width:100%;
+}
+.head-left a{
+    padding-bottom:3px;
+}
+.dieu_huong a{
+    background:none;
+    padding:0px;
+}
+.pr-img{
+    padding-left:0px;
+    height:233px;
+}
+.pr-img img{
+    width:100%;
+    height:100%;
+}
+a.pro-name{
+        color: #4395d1;
+    font-size: 18px;
+}
+p.pro-des{
+    margin-top: 10px;
+    height: 101px;
+    overflow: hidden;
+}
+.pro-price{
+    padding-bottom:10px;
+}
+.pro-price span{
+    color:#de5728;
+    font-weight:bold;
+}
+a.contc{
+    background: #4395cf;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.title-right{
+    font-size:17px;
+    border-bottom:2px solid #4395d1;
+}
+.menu-content{
+    height: 20px;
+    border-bottom: 1px solid #808080;
+    margin-bottom: 10px;
+}
+.menu-content ul{
+    list-style-type:none;
+    padding-left:0px;
+}
+.menu-content ul li{
+    float:left;
+}
+.menu-content ul li a{
+        text-transform: uppercase;
+    padding: 10px 20px;
+    cursor:pointer;
+}
