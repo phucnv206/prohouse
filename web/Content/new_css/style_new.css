@@ -19,7 +19,25 @@ header{
     float:left;
     padding-top:5px;
 }
-
+.head-left ul{
+    list-style-type:none;
+    padding-left:0px;
+}
+.head-left ul ul{
+    background:#2B333A;
+}
+.head-left ul ul li{
+    width:100%;
+}
+.head-left ul li {
+    float:left;
+    margin-right:5px;
+    cursor:pointer;
+}
+.head-left ul li a{
+    color:#fff;
+    cursor:pointer;
+}
 .head-right{
     
     float:right !important;

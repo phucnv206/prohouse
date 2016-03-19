@@ -178,9 +178,8 @@ a.contc{
     border-bottom:2px solid #4395d1;
 }
 .menu-content{
-    height: 20px;
-    border-bottom: 1px solid #808080;
     margin-bottom: 10px;
+    margin-top:20px;
 }
 .menu-content ul{
     list-style-type:none;
