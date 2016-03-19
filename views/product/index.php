@@ -22,15 +22,15 @@ use yii\helpers\Url;
             <a class="pro-name"><?= $model->details[0]->title ?></a>
             <p class="pro-des"><?= $model->details[0]->summary ?></p>
             <p class="pro-price">
-                RENTAL:
+                <?= Yii::t('app', 'RENTAL') ?>:
                 <span>
                     $<?= Yii::$app->formatter->asDecimal($model->price, 0) ?>
                     <?php if ($model->for == Product::FOR_RENT): ?>
-                        / month
+                        / <?= Yii::t('app', 'month') ?>
                     <?php endif ?>
                 </span> 
             </p>
-            <a class="contc" href="#">Contact us</a>
+            <a class="contc" href="#"><?= Yii::t('app', 'Contact us') ?></a>
         </div>
 
         <div class="col-md-12" style="clear: both;">
@@ -40,13 +40,13 @@ use yii\helpers\Url;
     </div>
     <div class="col-md-4 col-right">
         <div class="title-right">
-            SIMILAR PROJECTS
+            <?= Yii::t('app', 'SIMILAR PROJECTS') ?>
         </div>
         <div class="relate">
             <?php foreach ($others as $other): ?>
             <div class="moule-show">
                 <div class="news-img">
-                    <a href="<?= Url::to(['product/index', 'id' => $mainProduct['id']]) ?>">
+                    <a href="<?= Url::to(['product/index', 'id' => $other['id']]) ?>">
                         <img src="<?= $other->details[0]->thumbnail ?>" />
                     </a>
                 </div>
@@ -61,10 +61,10 @@ use yii\helpers\Url;
                         <p><?= $other->details[0]->summary ?></p>
                     </div>
                     <div class="news-proce">
-                        RENTAL: <span style="color:#dd5626">
+                        <?= Yii::t('app', 'RENTAL') ?>: <span style="color:#dd5626">
                             $<?= Yii::$app->formatter->asDecimal($other['price'], 0) ?>
                             <?php if ($other['for'] == Product::FOR_RENT): ?>
-                                / month
+                                / <?= Yii::t('app', 'month') ?>
                             <?php endif ?>
                         </span>
                     </div>

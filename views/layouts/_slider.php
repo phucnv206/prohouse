@@ -169,7 +169,13 @@ use app\components\Helpers;
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
             <?php foreach (Helpers::listSlides() as $slide): ?>
             <div data-p="225.00" style="display: none;">
-                <a href="<?= $slide['url'] ?>"><img data-u="image" src="<?= $slide['image'] ?>" /></a>
+                <?php if (empty($slide['url'])): ?>
+                    <img data-u="image" src="<?= $slide['image'] ?>" />
+                <?php else: ?>
+                <a href="<?= $slide['url'] ?>" target="_blank">
+                    <img data-u="image" src="<?= $slide['image'] ?>" />
+                </a>
+                <?php endif ?>
             </div>
             <?php endforeach ?>
 

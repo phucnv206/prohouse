@@ -45,7 +45,8 @@ class CategoryController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
-            $listItem = Category::find()->with('details')->all();
+            $model->pos = 0;
+            $listItem = Category::find()->with('details')->orderBy('pos ASC, id DESC')->all();
             return $this->render('index', [
                 'model' => $model,
                 'listItem' => $listItem,

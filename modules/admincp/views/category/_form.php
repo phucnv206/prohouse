@@ -15,20 +15,22 @@ use yii\widgets\ActiveForm;
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#vi">Tiếng Việt</a>
+                    <a class="nav-link active" data-toggle="tab" href="#en">Tiếng Anh</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#en">Tiếng Anh</a>
+                    <a class="nav-link" data-toggle="tab" href="#vi">Tiếng Việt</a>
                 </li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane active" id="vi" role="tabpanel">
-                    <?= $form->field($model, 'titleVi')->textInput() ?>
-                </div>
-                <div class="tab-pane" id="en" role="tabpanel">
+                <div class="tab-pane active" id="en" role="tabpanel">
                     <?= $form->field($model, 'titleEn')->textInput() ?>
                 </div>
+                <div class="tab-pane" id="vi" role="tabpanel">
+                    <?= $form->field($model, 'titleVi')->textInput() ?>
+                </div>
             </div>
+            
+            <?= $form->field($model, 'pos')->textInput(['type' => 'number', 'style' => 'width: 100px'])->hint('Ưu tiên số nhỏ') ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Thêm mới' : 'Cập nhật', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

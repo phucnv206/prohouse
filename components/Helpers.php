@@ -11,12 +11,12 @@ class Helpers extends \yii\base\Component
     
     public static function listCategories()
     {
-        return Category::find()->with('details')->all();
+        return Category::find()->with('details')->orderBy('pos ASC, id DESC')->all();
     }
     
     public static function listSlides()
     {
-        return Slide::find()->all();
+        return Slide::find()->orderBy('id DESC')->all();
     }
 
     public static function getFor($index = null)

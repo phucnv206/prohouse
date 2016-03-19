@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\components\Helpers;
 ?>
-<div class="category-form">
+<div class="product-form">
     <?php
     $form = ActiveForm::begin([
         'enableClientScript' => false,
@@ -14,10 +14,10 @@ use app\components\Helpers;
     ?>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#vi">Tiếng Việt</a>
+            <a class="nav-link active" data-toggle="tab" href="#en">Tiếng Anh</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#en">Tiếng Anh</a>
+            <a class="nav-link" data-toggle="tab" href="#vi">Tiếng Việt</a>
         </li>
     </ul>
     <div class="tab-content">
@@ -38,22 +38,7 @@ use app\components\Helpers;
                 <?= $form->field($model, 'price')->textInput() ?>
             </div>
         </div>
-        <div class="tab-pane active" id="vi" role="tabpanel">
-            <div class="row">
-                <div class="col-md-6">
-                    <?= $form->field($model, 'titleVi')->textInput() ?>
-                </div>
-                <div class="col-md-6">
-                    <?= $form->field($model, 'thumbnailVi', [
-                        'inputOptions' => ['id' => 'browse-img-en', 'class' => 'form-control'],
-                        'template' => '{label}<div class="input-group">{input}<span class="input-group-btn"><button type="button" id="browse-btn-en" class="btn btn-default"><i class="fa fa-search"></i></a></span></div>'
-                    ])->textInput(['maxlength' => 255]) ?>
-                </div>
-                <div class="col-md-8"><?= $form->field($model, 'summaryVi')->textarea() ?></div>
-            </div>
-            <?= $form->field($model, 'contentVi')->textarea(['class' => 'content-area']) ?>
-        </div>
-        <div class="tab-pane" id="en" role="tabpanel">
+        <div class="tab-pane active" id="en" role="tabpanel">
             <div class="row">
                 <div class="col-md-6">
                     <?= $form->field($model, 'titleEn')->textInput() ?>
@@ -67,6 +52,21 @@ use app\components\Helpers;
                 <div class="col-md-8"><?= $form->field($model, 'summaryEn')->textarea() ?></div>
             </div>
             <?= $form->field($model, 'contentEn')->textarea(['class' => 'content-area']) ?>
+        </div>
+        <div class="tab-pane" id="vi" role="tabpanel">
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'titleVi')->textInput() ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'thumbnailVi', [
+                        'inputOptions' => ['id' => 'browse-img-vi', 'class' => 'form-control'],
+                        'template' => '{label}<div class="input-group">{input}<span class="input-group-btn"><button type="button" id="browse-btn-vi" class="btn btn-default"><i class="fa fa-search"></i></a></span></div>'
+                    ])->textInput(['maxlength' => 255]) ?>
+                </div>
+                <div class="col-md-8"><?= $form->field($model, 'summaryVi')->textarea() ?></div>
+            </div>
+            <?= $form->field($model, 'contentVi')->textarea(['class' => 'content-area']) ?>
         </div>
     </div>
     <div class="form-group">

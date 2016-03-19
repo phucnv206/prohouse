@@ -31,8 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <tr>
                         <th scope="row"><?= $k + 1 ?></th>
                         <td>
-                            <?= $item->details[0]->title ?> /
-                            <?= $item->details[1]->title ?>
+                            <?= $item->details[1]->title ?> /
+                            <?= $item->details[0]->title ?>
                         </td>
                         <td><?= date('d/m/Y H:i', $item->created) ?></td>
                         <td><?= date('d/m/Y H:i', $item->modified) ?></td>

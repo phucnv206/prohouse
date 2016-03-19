@@ -25,7 +25,7 @@ class CategoryInfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titleVi'], 'required'],
+            [['titleEn'], 'required'],
             [['titleVi', 'titleEn'], 'string', 'max' => 255],
             [['contentVi', 'contentEn'], 'string'],
         ];

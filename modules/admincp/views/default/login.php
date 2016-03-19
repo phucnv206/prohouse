@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'fieldConfig' => ['errorOptions' => ['class' => 'text-help']]
                     ]);
                     ?>
-                    <?= $form->field($model, 'username') ?>
+                    <?= $form->field($model, 'username', ['inputOptions' => ['autofocus' => true, 'class' => 'form-control']]) ?>
 
                     <?= $form->field($model, 'password')->passwordInput() ?>
 

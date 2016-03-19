@@ -1,6 +1,25 @@
 <?php
 
 return [
+    'Other' => 'Khác',
+    'About' => 'Giới thiệu',
+    'Contact' => 'Liên hệ',
     'For rent' => 'Thuê',
-    'For sale' => 'Bán'
+    'For sale' => 'Bán',
+    'Apartment' => 'Căn hộ',
+    'Office' => 'Văn phòng',
+    'House' => 'Nhà ở',
+    'RENTAL' => 'PHÍ',
+    'Search' => 'Tìm',
+    'No results found' => 'Không tìm thấy kết quả',
+    'NEWS' => 'TIN TỨC',
+    'month' => 'tháng',
+    'Contact us' => 'Liên hệ ngay',
+    'SIMILAR PROJECTS' => 'DỰ ÁN TƯƠNG TỰ',
+    'Name' => 'Tên',
+    'Phone' => 'Điện thoại',
+    'Email' => 'Thư điện tử',
+    'Address' => 'Địa chỉ',
+    'Message' => 'Nội dung',
+    'Submit' => 'Gửi',
 ];

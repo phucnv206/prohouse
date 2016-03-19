@@ -23,8 +23,9 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titleVi'], 'required'],
+            [['titleEn'], 'required'],
             [['titleVi', 'titleEn'], 'string', 'max' => 255],
+            ['pos', 'integer', 'min' => 0]
         ];
     }
 
@@ -36,6 +37,7 @@ class Category extends \yii\db\ActiveRecord
             'created' => 'Ngày tạo',
             'modified' => 'Ngày cập nhật',
             'status' => 'Trạng thái',
+            'pos' => 'Thứ tự'
         ];
     }
 

@@ -19,20 +19,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#vi">Tiếng Việt</a>
+            <a class="nav-link active" data-toggle="tab" href="#en">Tiếng Anh</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#en">Tiếng Anh</a>
+            <a class="nav-link" data-toggle="tab" href="#vi">Tiếng Việt</a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="vi" role="tabpanel">
-            <?= $form->field($model, 'titleVi')->textInput() ?>
-            <?= $form->field($model, 'contentVi')->textarea(['class' => 'content-area']) ?>
-        </div>
-        <div class="tab-pane" id="en" role="tabpanel">
+        <div class="tab-pane active" id="en" role="tabpanel">
             <?= $form->field($model, 'titleEn')->textInput() ?>
             <?= $form->field($model, 'contentEn')->textarea(['class' => 'content-area']) ?>
+        </div>
+        <div class="tab-pane" id="vi" role="tabpanel">
+            <?= $form->field($model, 'titleVi')->textInput() ?>
+            <?= $form->field($model, 'contentVi')->textarea(['class' => 'content-area']) ?>
         </div>
     </div>
 

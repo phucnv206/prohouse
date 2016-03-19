@@ -2,7 +2,7 @@
 
 $params = require(__DIR__ . '/params.php');
 $config = [
-    'language' => 'vi-VN',
+    'language' => 'en-US',
     'id' => 'prohouse',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'init'],
@@ -29,9 +29,16 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                '<module:admincp|api>' => '<module>',
-                '<module:admincp|api>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-//                'location' => 'site/location',
+                '<module:admincp>' => '<module>',
+                '<module:admincp>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                '/s/for/<for:\d+>' => 'site/search',
+                's/type/<type:\d+>' => 'site/search',
+                's' => 'site/search',
+                'p/<id:\d+>' => 'product/index',
+                'c/<id:\d+>' => 'category/index',
+                'n/<id:\d+>' => 'post/index',
+                'contact' => 'site/contact',
+                'location' => 'site/location',
 //                '<url.*>' => 'site/index',
             ],
         ],
@@ -50,10 +57,10 @@ $config = [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'pinut.com.vn@gmail.com',
-                'password' => 'C0nM3o123',
-                'port' => '587',
+                'host' => 'shost011.tenten.vn',
+                'username' => '	info@prohouse.vn',
+                'password' => 'C0nM3oTr3oC@y',
+                'port' => '465',
                 'encryption' => 'tls',
             ],
         ],

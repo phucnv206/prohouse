@@ -28,7 +28,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titleVi', 'thumbnailVi'], 'required'],
+            [['titleEn', 'thumbnailEn'], 'required'],
             [['titleVi', 'titleEn', 'thumbnailVi', 'thumbnailEn'], 'string', 'max' => 255],
             [['summaryVi', 'summaryEn'], 'string', 'max' => 500],
             [['contentVi', 'contentEn'], 'string'],
