@@ -55,14 +55,7 @@ $config = [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'shost011.tenten.vn',
-                'username' => '	info@prohouse.vn',
-                'password' => 'C0nM3oTr3oC@y',
-                'port' => '465',
-                'encryption' => 'tls',
-            ],
+            'transport' => require(__DIR__ . '/mail.php'),
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

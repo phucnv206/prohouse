@@ -85,16 +85,12 @@ class SiteController extends Controller
         $user = User::findOne(1);
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $mail = Yii::$app->mailer->compose('contact', ['model' => $model])
+            Yii::$app->mailer->compose('contact', ['model' => $model])
             ->setFrom(Yii::$app->params['mailUser'])
             ->setTo($user->email)
             ->setSubject('Thông tin liên hệ - ' . Yii::$app->params['title'])
             ->send();
-            if ($mail) {
-                Yii::$app->session->setFlash('success', Yii::t('app', 'Message has been sent successfully!'));
-            } else {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'There was an error sending email.'));
-            }
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Message has been sent successfully!'));
             return $this->refresh();
         } else {
             return $this->render('contact', [
