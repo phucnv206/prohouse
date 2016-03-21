@@ -38,6 +38,7 @@ $config = [
                 'c/<id:\d+>' => 'category/index',
                 'n/<id:\d+>' => 'post/index',
                 'contact' => 'site/contact',
+                'about' => 'site/about',
                 'location' => 'site/location',
 //                '<url.*>' => 'site/index',
             ],

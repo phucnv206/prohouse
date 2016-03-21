@@ -14,42 +14,18 @@ use yii\widgets\ActiveForm;
     ?>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#vi">Tiếng Việt</a>
+            <a class="nav-link active" data-toggle="tab" href="#en">Tiếng Anh</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#en">Tiếng Anh</a>
+            <a class="nav-link" data-toggle="tab" href="#vi">Tiếng Việt</a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="vi" role="tabpanel">
-            <?= $form->field($model, 'titleVi')->textInput() ?>
-            <?php if ($model->id !== Page::PAGE_ABOUT && $model->id !== Page::PAGE_PRODUCT && $model->id !== Page::PAGE_NEWS): ?>
-                <?= $form->field($model, 'thumbnailVi', [
-                    'inputOptions' => ['id' => 'browse-img-vi', 'class' => 'form-control'],
-                    'template' => '{label}<div class="input-group">{input}<span class="input-group-btn"><button type="button" id="browse-btn-vi" class="btn btn-default"><i class="fa fa-search"></i></a></span></div>'
-                ])->textInput(['maxlength' => 255]) ?>
-            <?php endif; ?>
-            <?php if ($model->id !== Page::PAGE_PARTNER && $model->id !== Page::PAGE_NEWS): ?>
-                <?= $form->field($model, 'summaryVi')->textarea() ?>
-            <?php endif; ?>
-            <?php if ($model->id !== Page::PAGE_PRODUCT && $model->id !== Page::PAGE_NEWS): ?>
-                <?= $form->field($model, 'contentVi')->textarea(['class' => 'content-area']) ?>
-            <?php endif; ?>
+        <div class="tab-pane active" id="en" role="tabpanel">
+            <?= $form->field($model, 'contentEn')->textarea(['class' => 'content-area']) ?>
         </div>
-        <div class="tab-pane" id="en" role="tabpanel">
-            <?= $form->field($model, 'titleEn')->textInput() ?>
-            <?php if ($model->id !== Page::PAGE_ABOUT && $model->id !== Page::PAGE_PRODUCT && $model->id !== Page::PAGE_NEWS): ?>
-                <?= $form->field($model, 'thumbnailEn', [
-                    'inputOptions' => ['id' => 'browse-img-en', 'class' => 'form-control'],
-                    'template' => '{label}<div class="input-group">{input}<span class="input-group-btn"><button type="button" id="browse-btn-en" class="btn btn-default"><i class="fa fa-search"></i></a></span></div>'
-                ])->textInput(['maxlength' => 255]) ?>
-            <?php endif; ?>
-            <?php if ($model->id !== Page::PAGE_PARTNER && $model->id !== Page::PAGE_NEWS): ?>
-                <?= $form->field($model, 'summaryEn')->textarea() ?>
-            <?php endif; ?>
-            <?php if ($model->id !== Page::PAGE_PRODUCT && $model->id !== Page::PAGE_NEWS): ?>
-                <?= $form->field($model, 'contentEn')->textarea(['class' => 'content-area']) ?>
-            <?php endif; ?>
+        <div class="tab-pane" id="vi" role="tabpanel">
+            <?= $form->field($model, 'contentVi')->textarea(['class' => 'content-area']) ?>
         </div>
     </div>
     <div class="form-group">

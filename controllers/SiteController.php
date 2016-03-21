@@ -10,6 +10,7 @@ use app\components\Helpers;
 use app\models\User;
 use app\models\ContactForm;
 use app\models\Ads;
+use app\models\Page;
 
 class SiteController extends Controller
 {
@@ -99,6 +100,11 @@ class SiteController extends Controller
         }
     }
 
+    public function actionAbout()
+    {
+        $model = Page::find()->where(['id' => Page::PAGE_ABOUT])->with('details')->one();
+        return $this->render('about', ['model' => $model]);
+    }
 
     public function actionLocation($lang = 'vi')
     {

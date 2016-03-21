@@ -50,7 +50,7 @@ class CategoryInfo extends \yii\db\ActiveRecord
                 $titles = [$this->titleVi, $this->titleEn];
                 $contents = [$this->contentVi, $this->contentEn];
                 foreach (Yii::$app->params['langs'] as $k => $lang) {
-                    $detail = CategoryInfoDetail::findOne(['category_id' => $this->id, 'lang' => $lang]);
+                    $detail = CategoryInfoDetail::findOne(['category_info_id' => $this->id, 'lang' => $lang]);
                     $detail->title = $titles[$k];
                     $detail->content = $contents[$k];
                     $detail->save();
@@ -81,7 +81,6 @@ class CategoryInfo extends \yii\db\ActiveRecord
     public function beforeDelete()
     {
         if (parent::beforeDelete()) {
-            var_dump($this->id);exit;
             CategoryInfoDetail::deleteAll(['category_info_id' => $this->id]);
             return true;
         } else {

@@ -47,10 +47,21 @@ use yii\widgets\ActiveForm;
                 <?= Html::a('+Thêm nội dung', ['info', 'cateId' => $model->id], ['class' => 'btn btn-link']) ?>
                 <ul>
                     <?php foreach ($infos as $info): ?>
-                    <li><?= Html::a($info->details[0]->title . ' / ' . $info->details[1]->title, ['info', 'cateId' => $model->id, 'id' => $info->id], ['class' => 'btn btn-link']) ?></li>
+                    <li>
+                        <?= Html::a($info->details[0]->title . ' / ' . $info->details[1]->title, ['info', 'cateId' => $model->id, 'id' => $info->id], ['class' => 'btn btn-link']) ?>
+                        <?= Html::a('<i class="fa fa-times"></i>', ['delete-info', 'id' => $info->id], ['class' => 'btn btn-link delete-info-btn']) ?>
+                    </li>
                     <?php endforeach ?>
                 </ul>
             <?php endif ?>
         </div>
     </div>
 </div>
+<?php
+$this->registerJs("
+    $('.delete-info-btn').click(function (e) {
+        if (!confirm('Xác nhận xóa?')) {
+            return e.preventDefault();
+        }
+    });
+");

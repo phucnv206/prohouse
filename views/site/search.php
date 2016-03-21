@@ -13,7 +13,7 @@ use yii\helpers\Html;
             <?= Yii::t('app', 'No results found') ?>
             <?php endif ?>
             <?php foreach ($products as $i => $product): ?>
-            <div class="col-md-6 moule-show" style="padding: 0 10px; height: 300px;">
+            <div class="col-md-6 moule-show" style="padding: 0 10px; height: 360px;">
                 <div class="news-img">
                     <a title="<?= $product['details'][0]['title'] ?>" href="<?= Url::to(['product/index', 'id' => $product['id']]) ?>">
                         <img alt="<?= $product['details'][0]['title'] ?>" src="<?= $product['details'][0]['thumbnail'] ?>" />

@@ -43,7 +43,7 @@ use app\models\Product;
                 <div class="col-md-5 col-xs-12 head-right">
                     <ul>
                         <li><a title="" href="#">Hotline: <span style="color:#2196f5">0917 187 909</span></a></li>
-                        <li><a title="" href="#"><?= Yii::t('app', 'About') ?> <span style="color:#7c7c7c">|</span></a></li>
+                        <li><a title="" href="<?= Url::to(['site/about']) ?>"><?= Yii::t('app', 'About') ?> <span style="color:#7c7c7c">|</span></a></li>
                         <li class="last">
                             <?= Html::a(Yii::t('app', 'Contact'), ['site/contact']) ?>
                         </li>

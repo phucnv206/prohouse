@@ -4,7 +4,7 @@ h1,h2{
 }
 a:hover{
     text-decoration:none !important;
-    cursor:default;
+    /*cursor:default;*/
 }
  /*header*/
 header{

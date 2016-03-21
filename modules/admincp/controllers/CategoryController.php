@@ -80,6 +80,17 @@ class CategoryController extends Controller
         $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
+    
+    public function actionDeleteInfo($id)
+    {
+        if (($model = CategoryInfo::findOne($id)) !== null) {
+            $cateId = $model->category_id;
+            $model->delete();
+            return $this->redirect(['index', 'id' => $cateId]);
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
 
     protected function findModel($id)
     {

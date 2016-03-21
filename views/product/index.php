@@ -30,7 +30,7 @@ use yii\helpers\Url;
                     <?php endif ?>
                 </span> 
             </p>
-            <a class="contc" href="#"><?= Yii::t('app', 'Contact us') ?></a>
+            <a class="contc" href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Contact us') ?></a>
         </div>
 
         <div class="col-md-12" style="clear: both;">

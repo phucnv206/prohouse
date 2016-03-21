@@ -1,6 +1,6 @@
 <?php
 
-use app\components\Helpers;
+use yii\helpers\Url;
 ?>
 <?= $this->render('/layouts/_slider') ?>
 
@@ -10,6 +10,7 @@ use app\components\Helpers;
             <?php foreach ($infos as $i => $info): ?>
                 <li class="<?= $i === 0 ? 'active' : '' ?>"><a data-toggle="tab" href="#info_<?= $info->id ?>"><?= $info->details[0]->title ?></a></li>
             <?php endforeach ?>
+            <li><a class="btn-primary" href="<?= Url::to(['site/contact']) ?>"><?= Yii::t('app', 'Contact') ?></a></li>
         </ul>
         <div class="tab-content">
             <?php foreach ($infos as $i => $info): ?>
