@@ -69,7 +69,7 @@ use yii\helpers\Html;
                             <a href="<?= Url::to(['post/index', 'id' => $post->id]) ?>"><img src="<?= $post->details[0]->thumbnail ?>" /></a>
                         </div>
                         <div class="name-news">
-                            <p><a href="<?= Url::to(['post/index', 'id' => $post->id]) ?>"><?= $post->details[0]->title ?></a></p>
+                            <p><a style="color: black; font-size: 14px;" href="<?= Url::to(['post/index', 'id' => $post->id]) ?>"><?= $post->details[0]->title ?></a></p>
                         </div>
                     </div>
                 <?php endforeach ?>
