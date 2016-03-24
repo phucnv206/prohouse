@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 ?>
-<?= $this->render('/layouts/_slider') ?>
+<?= $this->render('/layouts/_slider', ['images' => $images]) ?>
 
 <div class="container">
     <div class="menu-content ">

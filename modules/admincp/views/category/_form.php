@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 ?>
 
 <div class="category-form">
@@ -30,7 +31,16 @@ use yii\widgets\ActiveForm;
                 </div>
             </div>
             
-            <?= $form->field($model, 'pos')->textInput(['type' => 'number', 'style' => 'width: 100px'])->hint('Ưu tiên số nhỏ') ?>
+            <div class="images">
+                <div class="row">
+                    <?php foreach ($images as $image) : ?>
+                    <div class="col-sm-3">
+                        <a href="<?= Url::to(['images', 'cateId' => $model->id, 'id' => $image->id]) ?>"><img class="img-fluid" src="<?= $image->image ?>"></a>
+                    </div>
+                    <?php endforeach ?>
+                </div>
+                <p><?= Html::a('+Thêm ảnh', ['images', 'cateId' => $model->id], ['class' => 'btn btn-link']) ?></p>
+            </div>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Thêm mới' : 'Cập nhật', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -19,6 +19,11 @@ class Category extends \yii\db\ActiveRecord
     {
         return $this->hasMany(CategoryDetail::className(), ['category_id' => 'id'])->orderBy('lang DESC');
     }
+    
+    public function getImages()
+    {
+        return $this->hasMany(CategoryImages::className(), ['category_id' => 'id'])->orderBy('id DESC');
+    }
 
     public function rules()
     {
@@ -93,6 +98,7 @@ class Category extends \yii\db\ActiveRecord
             }
             CategoryInfoDetail::deleteAll(['category_info_id' => $ids]);
             CategoryInfo::deleteAll(['category_id' => $this->id]);
+            CategoryImages::deleteAll(['category_id' => $this->id]);
             return true;
         } else {
             return false;

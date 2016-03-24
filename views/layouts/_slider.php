@@ -167,7 +167,8 @@ use app\components\Helpers;
             <div style="position:absolute;display:block;background:url('/Content/sliderbanner/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
-            <?php foreach (Helpers::listSlides() as $slide): ?>
+            <?php $images = isset($images) ? $images : Helpers::listSlides(); ?>
+            <?php foreach ($images as $slide): ?>
             <div data-p="225.00" style="display: none;">
                 <?php if (empty($slide['url'])): ?>
                     <img data-u="image" src="<?= $slide['image'] ?>" />

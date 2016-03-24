@@ -5,6 +5,7 @@ namespace app\modules\admincp\controllers;
 use Yii;
 use app\modules\admincp\models\Category;
 use app\modules\admincp\models\CategoryInfo;
+use app\modules\admincp\models\CategoryImages;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
@@ -37,6 +38,7 @@ class CategoryController extends Controller
         } else {
             $model = $this->findModel($id);
             $infos = CategoryInfo::find()->where(['category_id' => $id])->with('details')->all();
+            $images = CategoryImages::find()->where(['category_id' => $id])->all();
         }
         if (!empty($model->details)) {
             $model->titleVi = $model->details[0]->title;
@@ -50,7 +52,8 @@ class CategoryController extends Controller
             return $this->render('index', [
                 'model' => $model,
                 'listItem' => $listItem,
-                'infos' => $infos
+                'infos' => $infos,
+                'images' => $images
             ]);
         }
     }
@@ -74,6 +77,20 @@ class CategoryController extends Controller
             ]);
         }
     }
+    
+    public function actionImages($cateId, $id = null)
+    {
+        $model = $id === null ? new CategoryImages : CategoryImages::findOne($id);
+        $model->category_id = $cateId;
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index', 'id' => $cateId]);
+        } else {
+            return $this->render('images', [
+                'model' => $model,
+                'cateId' => $cateId
+            ]);
+        }
+    }
 
     public function actionDelete($id)
     {
@@ -92,16 +109,13 @@ class CategoryController extends Controller
         }
     }
     
-    public function actionSort($id, $up = 1)
+    public function actionReorder($sorted)
     {
-        $model = $this->findModel($id);
-        if ($up == 1) {
-            $model->pos++;
-        } elseif ($model->pos > 0) {
-            $model->pos--;
+        $sorted = explode(',', $sorted);
+        foreach ($sorted as $i => $id) {
+            Yii::$app->db->createCommand()->update('category', ['pos' => $i], ['id' => $id])->execute();
         }
-        $model->save();
-        return $this->redirect(['index']);
+        die('ok');
     }
 
     protected function findModel($id)
