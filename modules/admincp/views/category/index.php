@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <th>Ngày tạo</th>
                 <th>Ngày cập nhật</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +40,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         <td>
                             <?= Html::a('<i class="fa fa-pencil-square-o"></i>', ['index', 'id' => $item->id], ['class' => 'btn btn-link']) ?>
                             <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $item->id], ['class' => 'btn btn-link delete-btn']) ?>
+                        </td>
+                        <td>
+                            <?php if ($k > 0): ?>
+                            <?= Html::a('<i class="fa fa-angle-double-up"></i>', ['sort', 'id' => $item->id, 'up' => -1], ['class' => 'btn btn-link']) ?>
+                            <?php endif ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

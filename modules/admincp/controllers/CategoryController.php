@@ -91,6 +91,18 @@ class CategoryController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function actionSort($id, $up = 1)
+    {
+        $model = $this->findModel($id);
+        if ($up == 1) {
+            $model->pos++;
+        } elseif ($model->pos > 0) {
+            $model->pos--;
+        }
+        $model->save();
+        return $this->redirect(['index']);
+    }
 
     protected function findModel($id)
     {
