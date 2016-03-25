@@ -31,6 +31,7 @@ use yii\helpers\Url;
                 </div>
             </div>
             
+			<?php if (!$model->isNewRecord): ?>
             <div class="images">
                 <div class="row">
                     <?php foreach ($images as $image) : ?>
@@ -41,6 +42,7 @@ use yii\helpers\Url;
                 </div>
                 <p><?= Html::a('+Thêm ảnh', ['images', 'cateId' => $model->id], ['class' => 'btn btn-link']) ?></p>
             </div>
+			<?php endif; ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Thêm mới' : 'Cập nhật', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
