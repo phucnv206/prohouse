@@ -35,6 +35,7 @@ class CategoryController extends Controller
         if ($id === null) {
             $model = new Category;
             $infos = [];
+			$images = [];
         } else {
             $model = $this->findModel($id);
             $infos = CategoryInfo::find()->where(['category_id' => $id])->with('details')->all();
