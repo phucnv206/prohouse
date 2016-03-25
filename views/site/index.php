@@ -11,7 +11,14 @@ use yii\helpers\Html;
     <div class="col-md-8 col-left">
         <?php foreach ($list as $type => $item): ?>
         <div class="module">
-            <div class="module-name">
+            <?php
+                $class = '';
+                if ($type == Product::TYPE_OFFICE)
+                    $class = 'office';
+                elseif ($type == Product::TYPE_HOUSE)
+                    $class = 'house';
+            ?>
+            <div class="module-name <?= $class ?>">
                 <a><?= Helpers::getType($type) ?></a>
                 <div class="dieu_huong">
                     <a data-slide="prev" href="#myCarousel">

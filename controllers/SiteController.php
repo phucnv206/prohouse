@@ -31,7 +31,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
         if (!Yii::$app->session->has('test')) die('Coming soon...');
-        $products = Product::find()->with('details')->orderBy('id DESC')->asArray()->all();
+        $products = Product::find()->with('details')->orderBy('type, id DESC')->asArray()->all();
         $list = [];
         foreach ($products as $product) {
             if (empty($list[$product['type']])) {
