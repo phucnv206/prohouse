@@ -21,6 +21,7 @@ use yii\helpers\Url;
                     <a class="dropdown-item" href="<?= Url::toRoute('post/index') ?>">Tin tức</a>
                     <a class="dropdown-item" href="<?= Url::toRoute('page/index') ?>">Nội dung</a>
                     <a class="dropdown-item" href="<?= Url::toRoute('ads/index') ?>">Quảng cáo</a>
+                    <a class="dropdown-item" href="<?= Url::toRoute('message/index') ?>">Liên hệ</a>
                 </div>
             </li>
         </ul>

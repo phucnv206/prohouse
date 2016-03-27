@@ -31,18 +31,19 @@ use yii\helpers\Url;
                 </div>
             </div>
             
-			<?php if (!$model->isNewRecord): ?>
+            <?php if (!$model->isNewRecord): ?>
             <div class="images">
                 <div class="row">
                     <?php foreach ($images as $image) : ?>
                     <div class="col-sm-3">
+                        <div class="text-xs-right"><a class="delete-img" href="<?= Url::to(['delete-image', 'id' => $image->id]) ?>"><i class="fa fa-times"></i></a></div>
                         <a href="<?= Url::to(['images', 'cateId' => $model->id, 'id' => $image->id]) ?>"><img class="img-fluid" src="<?= $image->image ?>"></a>
                     </div>
                     <?php endforeach ?>
                 </div>
                 <p><?= Html::a('+Thêm ảnh', ['images', 'cateId' => $model->id], ['class' => 'btn btn-link']) ?></p>
             </div>
-			<?php endif; ?>
+            <?php endif; ?>
 
             <div class="form-group">
                 <?= Html::submitButton($model->isNewRecord ? 'Thêm mới' : 'Cập nhật', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
@@ -71,7 +72,7 @@ use yii\helpers\Url;
 </div>
 <?php
 $this->registerJs("
-    $('.delete-info-btn').click(function (e) {
+    $('.delete-info-btn, .delete-img').click(function (e) {
         if (!confirm('Xác nhận xóa?')) {
             return e.preventDefault();
         }

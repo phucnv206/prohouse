@@ -110,6 +110,17 @@ class CategoryController extends Controller
         }
     }
     
+    public function actionDeleteImage($id)
+    {
+        if (($model = CategoryImages::findOne($id)) !== null) {
+            $cateId = $model->category_id;
+            $model->delete();
+            return $this->redirect(['index', 'id' => $cateId]);
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    
     public function actionReorder($sorted)
     {
         $sorted = explode(',', $sorted);

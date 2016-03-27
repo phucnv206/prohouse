@@ -5,8 +5,8 @@ use yii\helpers\Url;
 <?= $this->render('/layouts/_slider', ['images' => $images]) ?>
 
 <div class="container">
-    <div class="menu-content ">
-        <ul class="nav nav-tabs">
+    <div class="menu-content">
+        <ul class="nav nav-tabs" data-spy="affix" data-offset-top="524" data-offset-bottom="200">
             <?php foreach ($infos as $i => $info): ?>
                 <li class="<?= $i === 0 ? 'active' : '' ?>"><a data-toggle="tab" href="#info_<?= $info->id ?>"><?= $info->details[0]->title ?></a></li>
             <?php endforeach ?>
@@ -23,3 +23,15 @@ use yii\helpers\Url;
         </div>
     </div>
 </div>
+<?php
+$this->registerCss("
+.menu-content ul.nav.affix {
+    top: 0;
+    background-color: #FFF;
+}
+.menu-content ul.nav.affix + .tab-content {
+    margin-top: 60px;
+}
+
+");
+?>

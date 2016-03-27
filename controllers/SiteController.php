@@ -8,9 +8,9 @@ use app\models\Product;
 use app\models\Post;
 use app\components\Helpers;
 use app\models\User;
-use app\models\ContactForm;
 use app\models\Ads;
 use app\models\Page;
+use app\models\Message;
 
 class SiteController extends Controller
 {
@@ -83,9 +83,15 @@ class SiteController extends Controller
     
     public function actionContact()
     {
-        $user = User::findOne(1);
-        $model = new ContactForm();
+        $model = new Message();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->created = time();
+            $model->name = \yii\helpers\Html::encode($model->name);
+            $model->phone = \yii\helpers\Html::encode($model->phone);
+            $model->address = \yii\helpers\Html::encode($model->address);
+            $model->message = \yii\helpers\Html::encode($model->message);
+            $model->save();
+            $user = User::findOne(1);
             Yii::$app->mailer->compose('contact', ['model' => $model])
             ->setFrom(Yii::$app->params['mailUser'])
             ->setTo($user->email)
