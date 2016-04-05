@@ -5,6 +5,7 @@ namespace app\components;
 use Yii;
 use app\models\Category;
 use app\models\Slide;
+use app\models\Legal;
 
 class Helpers extends \yii\base\Component
 {
@@ -12,6 +13,11 @@ class Helpers extends \yii\base\Component
     public static function listCategories()
     {
         return Category::find()->with('details')->orderBy('pos ASC, id DESC')->all();
+    }
+    
+    public static function listLegal()
+    {
+        return Legal::find()->with('details')->orderBy('id DESC')->all();
     }
     
     public static function listSlides()

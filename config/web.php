@@ -37,6 +37,7 @@ $config = [
                 'p/<id:\d+>' => 'product/index',
                 'c/<id:\d+>' => 'category/index',
                 'n/<id:\d+>' => 'post/index',
+                'l/<id:\d+>' => 'legal/index',
                 'contact' => 'site/contact',
                 'about' => 'site/about',
                 'location' => 'site/location',
