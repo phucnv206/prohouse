@@ -114,9 +114,9 @@ use app\models\Product;
         padding: 6px 10px !important;
         color: #FFF !important;
         display: block;
-        width: 150px;
-        height: 36px !important;
-        font-size: 18px !important;
+        min-width: 150px;
+        height: 30px !important;
+        font-size: 14px !important;
 
     }
     .legal-dropdown a:not(:last-child) {

@@ -35,7 +35,7 @@ use yii\helpers\Url;
 
         <div class="col-md-12" style="clear: both;">
             <br><br>
-            <?= $model->details[0]->content ?>
+            <div class="responsive-content"><?= $model->details[0]->content ?></div>
         </div>
     </div>
     <div class="col-md-4 col-right">

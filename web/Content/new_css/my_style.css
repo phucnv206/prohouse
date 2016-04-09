@@ -215,3 +215,7 @@ a.contc{
     padding: 10px 20px;
     cursor:pointer;
 }
+.responsive-content img {
+    max-width: 100%;
+    height: auto;
+}
