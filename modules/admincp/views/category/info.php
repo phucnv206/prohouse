@@ -54,9 +54,10 @@ $this->registerJs("
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
             'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table contextmenu paste responsivefilemanager code'
+            'insertdatetime media table contextmenu paste responsivefilemanager code',
+            'textcolor'
         ],
-        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | print preview fullscreen',
+        toolbar: 'insertfile undo redo | styleselect | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | print preview fullscreen',
         external_filemanager_path: '/js/filemanager/',
         filemanager_title: 'Quản lý tập tin',
         external_plugins: {'filemanager': '/js/filemanager/plugin.min.js'}
