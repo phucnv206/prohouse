@@ -2,24 +2,24 @@
 
 namespace app\components;
 
-use Yii;
 use app\models\Category;
-use app\models\Slide;
 use app\models\Legal;
+use app\models\Slide;
+use Yii;
 
 class Helpers extends \yii\base\Component
 {
-    
+
     public static function listCategories()
     {
         return Category::find()->with('details')->orderBy('pos ASC, id DESC')->all();
     }
-    
+
     public static function listLegal()
     {
-        return Legal::find()->with('details')->orderBy('id DESC')->all();
+        return Legal::find()->where('type != :type', ['type' => Legal::TYPE_LEGAL_UPDATE])->with('details')->orderBy('id DESC')->all();
     }
-    
+
     public static function listSlides()
     {
         return Slide::find()->orderBy('id DESC')->all();
@@ -28,15 +28,15 @@ class Helpers extends \yii\base\Component
     public static function getFor($index = null)
     {
         $arr = [
-            \app\modules\admincp\models\Product::FOR_RENT => Yii::t('app', 'For rent'),
-            \app\modules\admincp\models\Product::FOR_SALE => Yii::t('app', 'For sale'),
+            \app\modules\admincp\models\Product::FOR_RENT => Yii::t('app', 'For lease'),
+            \app\modules\admincp\models\Product::FOR_SALE => Yii::t('app', 'For sales'),
         ];
         if ($index !== null) {
             return $arr[$index];
         }
         return $arr;
     }
-    
+
     public static function getType($index = null)
     {
         $arr = [
@@ -49,7 +49,7 @@ class Helpers extends \yii\base\Component
         }
         return $arr;
     }
-    
+
     public static function getLocations($id = null)
     {
         $data = json_decode(file_get_contents('./js/data.json'), true);

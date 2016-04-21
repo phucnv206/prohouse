@@ -1,6 +1,7 @@
 <?php
 
 namespace app\modules\admincp\models;
+
 use Yii;
 
 class Legal extends \yii\db\ActiveRecord
@@ -27,6 +28,7 @@ class Legal extends \yii\db\ActiveRecord
             [['titleEn'], 'required'],
             [['titleVi', 'titleEn'], 'string', 'max' => 255],
             [['contentVi', 'contentEn'], 'string'],
+            ['type', 'boolean'],
         ];
     }
 
@@ -40,6 +42,7 @@ class Legal extends \yii\db\ActiveRecord
             'created' => 'Ngày tạo',
             'modified' => 'Ngày cập nhật',
             'status' => 'Trạng thái',
+            'type' => 'Legal Update',
         ];
     }
 

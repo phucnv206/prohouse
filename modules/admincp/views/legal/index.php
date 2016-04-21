@@ -31,6 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <tr>
                         <th scope="row"><?= $k + 1 ?></th>
                         <td>
+                            <?php if($item->type): ?>
+                                <i class="fa fa-info-circle" title="<?=Yii::t('app', 'Legal Update') ?>"></i>
+                            <? endif ?>
                             <?= $item->details[1]->title ?> /
                             <?= $item->details[0]->title ?>
                         </td>

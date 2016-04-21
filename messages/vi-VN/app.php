@@ -6,7 +6,7 @@ return [
     'Contact' => 'Liên hệ',
     'For rent' => 'Thuê',
     'For lease' => 'Thuê',
-    'For sale' => 'Bán',
+    'For sales' => 'Bán',
     'Apartment' => 'Căn hộ',
     'Office' => 'Văn phòng',
     'House' => 'Nhà ở',

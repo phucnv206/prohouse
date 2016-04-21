@@ -7,6 +7,8 @@ use Yii;
 class Legal extends \yii\db\ActiveRecord
 {
 
+    const TYPE_LEGAL_UPDATE = 1;
+
     public static function tableName()
     {
         return 'legal';
@@ -15,7 +17,7 @@ class Legal extends \yii\db\ActiveRecord
     public function getDetails()
     {
         return $this->hasMany(LegalDetail::className(), ['legal_id' => 'id'])
-        ->where(['lang' => Yii::$app->language]);
+            ->where(['lang' => Yii::$app->language]);
     }
 
 }
