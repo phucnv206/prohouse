@@ -50,6 +50,19 @@ class Helpers extends \yii\base\Component
         return $arr;
     }
 
+    public static function getPriceType($index = null)
+    {
+        $arr = [
+            \app\modules\admincp\models\Product::PRICETYPE_MONTH => Yii::t('app', 'Month'),
+            \app\modules\admincp\models\Product::PRICETYPE_WEEK => Yii::t('app', 'Week'),
+            \app\modules\admincp\models\Product::PRICETYPE_YEAR => Yii::t('app', 'Year'),
+        ];
+        if ($index !== null) {
+            return $arr[$index];
+        }
+        return $arr;
+    }
+
     public static function getLocations($id = null)
     {
         $data = json_decode(file_get_contents('./js/data.json'), true);
@@ -58,6 +71,30 @@ class Helpers extends \yii\base\Component
             return $locations['districts'][$id];
         }
         return [$locations['name'] => $locations['districts']];
+    }
+
+    public static function getPriceLabel($for = null)
+    {
+        if ((int) $for === \app\modules\admincp\models\Product::FOR_RENT) {
+            return Yii::t('app', 'RENTAL');
+        }
+
+        return Yii::t('app', 'PRICE');
+    }
+
+    public static function getPriceFormat($product)
+    {
+        $suffix = $product['for'] == \app\modules\admincp\models\Product::FOR_RENT ? ' / ' . self::getPriceType($product['price_type']) : '';
+        $price = Yii::$app->formatter->asDecimal($product['price'], 0) . ' VND';
+        $priceUsd = '$' . Yii::$app->formatter->asDecimal($product['price_usd'], 0);
+        switch ($product['price_currency']) {
+            case \app\modules\admincp\models\Product::PRICECURR_BOTH:
+                return $priceUsd . ' ' . Yii::t('app', 'or') . ' ' . $price . $suffix;
+            case \app\modules\admincp\models\Product::PRICECURR_VND:
+                return $price . $suffix;
+            case \app\modules\admincp\models\Product::PRICECURR_USD:
+                return $priceUsd . $suffix;
+        }
     }
 
 }

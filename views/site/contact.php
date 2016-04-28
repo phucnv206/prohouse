@@ -40,8 +40,8 @@ use yii\widgets\ActiveForm;
     <div><a>Contact ProHouse</a></div>
     <div class="col-md-4">
         <p>Add: 130/19 Điện Biên Phủ Street, Ward 17, Binh Thanh District, HCM City, Viet Nam</p>
-        <p>Email: <a href="mailto:prohousevietnam@gmail.com">prohousevietnam@gmail.com</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/prohousevietnam" target="_blank">https://www.facebook.com/prohousevietnam</a></p>
+        <p>[E]: <a href="mailto:prohousevietnam@gmail.com">prohousevietnam@gmail.com</a></p>
+        <p>[F]: <a href="https://www.facebook.com/prohousevietnam" target="_blank">https://www.facebook.com/prohousevietnam</a></p>
     </div>
     <div class="col-md-8">
         <?php if (Yii::$app->session->hasFlash('success') || Yii::$app->session->hasFlash('error')): ?>

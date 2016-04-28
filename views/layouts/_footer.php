@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 <footer>
     <div class="container">
         <div class="ft-bottom">
@@ -9,6 +12,8 @@
                     <img src="/Content/new_images/gplus.png" />
                     <a href="https://www.facebook.com/prohousevietnam" target="_blank"><img src="/Content/new_images/fb.png" /></a>
                 </span>
+                <a href="<?=Url::to(['site/location', 'lang' => 'en'])?>"><img src="/Content/new_images/us.png" height="20" /></a>
+                <a href="<?=Url::to(['site/location', 'lang' => 'vi'])?>"><img src="/Content/new_images/vn.png" height="20" /></a>
             </p>
         </div>
     </div>

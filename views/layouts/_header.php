@@ -47,10 +47,6 @@ use yii\helpers\Url;
                         <li class="last">
                             <?=Html::a(Yii::t('app', 'Contact'), ['site/contact'])?>
                         </li>
-                        <li>
-                            <a href="<?=Url::to(['site/location', 'lang' => 'en'])?>"><img src="/Content/new_images/us.png" /></a>
-                            <a href="<?=Url::to(['site/location', 'lang' => 'vi'])?>"><img src="/Content/new_images/vn.png" /></a>
-                        </li>
                     </ul>
                 </div>
             </div>

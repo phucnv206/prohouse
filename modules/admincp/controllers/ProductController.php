@@ -2,12 +2,12 @@
 
 namespace app\modules\admincp\controllers;
 
-use Yii;
-use app\modules\admincp\models\Product;
 use app\modules\admincp\models\Category;
+use app\modules\admincp\models\Product;
+use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\AccessControl;
 
 class ProductController extends Controller
 {
@@ -25,7 +25,7 @@ class ProductController extends Controller
                         'roles' => ['@'],
                     ],
                 ],
-            ]
+            ],
         ];
     }
 
@@ -54,7 +54,7 @@ class ProductController extends Controller
             return $this->render('index', [
                 'model' => $model,
                 'listItem' => $listItem,
-                'listCate' => $listCate
+                'listCate' => $listCate,
             ]);
         }
     }
