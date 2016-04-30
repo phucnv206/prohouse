@@ -6,13 +6,11 @@ use yii\helpers\Url;
 ?>
 <div class="container">
     <div class="breadcrumb">
-        <p>
-            <a href="/">Home</a> >
-            <a href="<?=Url::to(['category/index', 'id' => $model->category->id])?>">
-                <?=$model->category->details[0]->title?>
-            </a> >
-            <?=$model->details[0]->title?>
-        </p>
+        <a href="/">Home</a> >
+        <a href="<?=Url::to(['category/index', 'id' => $model->category->id])?>">
+            <?=$model->category->details[0]->title?>
+        </a> >
+        <?=$model->details[0]->title?>
     </div>
     <div class="col-md-8 col-left">
         <div class="col-md-6 pr-img">

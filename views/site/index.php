@@ -116,7 +116,7 @@ if ($type == Product::TYPE_OFFICE) {
             <?php endforeach?>
         </div>
         <div class="news-feature">
-            <h2><?=Yii::t('app', 'NEWS')?></h2>
+            <h5><?=Yii::t('app', 'NEWS')?></h5>
             <div class="show-news">
                 <?php foreach ($posts as $post): ?>
                     <div class="show-news-item col-md-6">
