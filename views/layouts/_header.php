@@ -84,13 +84,15 @@ use yii\helpers\Url;
                                 <?=Yii::t('app', 'Legal')?>
                             </a>
                             <div class="legal-dropdown">
-                                <a href="<?=Url::to(['legal/update'])?>">
-                                    <?=Yii::t('app', 'Legal Update')?>
-                                </a>
-                                <?php foreach (Helpers::listLegal() as $legal): ?>
+                                <?php foreach (Helpers::listLegal() as $idx => $legal): ?>
                                 <a href="<?=Url::to(['legal/index', 'id' => $legal->id])?>">
                                     <?=$legal->details[0]->title?>
                                 </a>
+                                <?php if ($idx === 0): ?>
+                                    <a href="<?=Url::to(['legal/update'])?>">
+                                        <?=Yii::t('app', 'Legal Update')?>
+                                    </a>
+                                <?php endif?>
                                 <?php endforeach?>
                             </div>
                         </li>

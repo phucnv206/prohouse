@@ -42,18 +42,18 @@ $form = ActiveForm::begin([
                 <?=$form->field($model, 'location')->dropdownList(Helpers::getLocations())?>
             </div>
             <div class="col-md-6">
+                <?php $model->price_currency = $model->price_currency > 0 ? $model->price_currency : 0?>
+                <?=$form->field($model, 'price_currency')->radioList([0 => 'Cả hai', 1 => 'VND', 2 => 'USD'], ['itemOptions' => ['class' => 'currency-radio']])?>
+            </div>
+            <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 vnd-input" <?=$model->price_currency == 2 ? 'style="display: none"' : ''?>>
                         <?=$form->field($model, 'price')->textInput()?>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 usd-input" <?=$model->price_currency == 1 ? 'style="display: none"' : ''?>>
                         <?=$form->field($model, 'price_usd')->textInput()?>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <?php $model->price_currency = $model->isNewRecord ? 1 : $model->price_currency?>
-                <?=$form->field($model, 'price_currency')->radioList([1 => 'VND', 2 => 'USD', 0 => 'Cả hai'])?>
             </div>
         </div>
         <div class="tab-pane active" id="en" role="tabpanel">
@@ -136,4 +136,14 @@ $this->registerJs("
             return $('.pricetype-dropdown-wrapper').show();
         return $('.pricetype-dropdown-wrapper').hide();
     });
+    $('.currency-radio').change(function() {
+        $('.vnd-input, .usd-input').hide();
+        if ($(this).val() == 0)
+            $('.vnd-input, .usd-input').show();
+        else if ($(this).val() == 1)
+            $('.vnd-input').show();
+        else
+            $('.usd-input').show();
+    });
+
 ");

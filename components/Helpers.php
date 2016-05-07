@@ -17,7 +17,7 @@ class Helpers extends \yii\base\Component
 
     public static function listLegal()
     {
-        return Legal::find()->where('type != :type', ['type' => Legal::TYPE_LEGAL_UPDATE])->with('details')->orderBy('id DESC')->all();
+        return Legal::find()->where('type != :type', ['type' => Legal::TYPE_LEGAL_UPDATE])->with('details')->orderBy('id')->all();
     }
 
     public static function listSlides()

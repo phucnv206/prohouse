@@ -2,13 +2,13 @@
 
 namespace app\modules\admincp\controllers;
 
-use Yii;
 use app\modules\admincp\models\Category;
-use app\modules\admincp\models\CategoryInfo;
 use app\modules\admincp\models\CategoryImages;
+use app\modules\admincp\models\CategoryInfo;
+use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\AccessControl;
 
 class CategoryController extends Controller
 {
@@ -18,15 +18,15 @@ class CategoryController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'delete'],
+                'only' => ['index', 'info', 'images', 'delete', 'delete-info', 'delete-image', 'reorder', 'reorder-info'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'delete'],
+                        'actions' => ['index', 'info', 'images', 'delete', 'delete-info', 'delete-image', 'reorder', 'reorder-info'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
-            ]
+            ],
         ];
     }
 
@@ -35,10 +35,10 @@ class CategoryController extends Controller
         if ($id === null) {
             $model = new Category;
             $infos = [];
-			$images = [];
+            $images = [];
         } else {
             $model = $this->findModel($id);
-            $infos = CategoryInfo::find()->where(['category_id' => $id])->with('details')->all();
+            $infos = CategoryInfo::find()->where(['category_id' => $id])->with('details')->orderBy('pos ASC, id DESC')->all();
             $images = CategoryImages::find()->where(['category_id' => $id])->all();
         }
         if (!empty($model->details)) {
@@ -54,11 +54,11 @@ class CategoryController extends Controller
                 'model' => $model,
                 'listItem' => $listItem,
                 'infos' => $infos,
-                'images' => $images
+                'images' => $images,
             ]);
         }
     }
-    
+
     public function actionInfo($cateId, $id = null)
     {
         $model = $id === null ? new CategoryInfo : CategoryInfo::findOne($id);
@@ -74,11 +74,11 @@ class CategoryController extends Controller
         } else {
             return $this->render('info', [
                 'model' => $model,
-                'cateId' => $cateId
+                'cateId' => $cateId,
             ]);
         }
     }
-    
+
     public function actionImages($cateId, $id = null)
     {
         $model = $id === null ? new CategoryImages : CategoryImages::findOne($id);
@@ -88,7 +88,7 @@ class CategoryController extends Controller
         } else {
             return $this->render('images', [
                 'model' => $model,
-                'cateId' => $cateId
+                'cateId' => $cateId,
             ]);
         }
     }
@@ -98,7 +98,7 @@ class CategoryController extends Controller
         $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
-    
+
     public function actionDeleteInfo($id)
     {
         if (($model = CategoryInfo::findOne($id)) !== null) {
@@ -109,7 +109,7 @@ class CategoryController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
+
     public function actionDeleteImage($id)
     {
         if (($model = CategoryImages::findOne($id)) !== null) {
@@ -120,12 +120,21 @@ class CategoryController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
+
     public function actionReorder($sorted)
     {
         $sorted = explode(',', $sorted);
         foreach ($sorted as $i => $id) {
             Yii::$app->db->createCommand()->update('category', ['pos' => $i], ['id' => $id])->execute();
+        }
+        die('ok');
+    }
+
+    public function actionReorderInfo($sorted)
+    {
+        $sorted = explode(',', $sorted);
+        foreach ($sorted as $i => $id) {
+            Yii::$app->db->createCommand()->update('category_info', ['pos' => $i], ['id' => $id])->execute();
         }
         die('ok');
     }

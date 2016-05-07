@@ -41,11 +41,18 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titleEn', 'thumbnailEn', 'category_id', 'price', 'price_usd'], 'required'],
+            [['titleEn', 'thumbnailEn', 'category_id'], 'required'],
+            ['price', 'required', 'when' => function ($model) {
+                return $model->price_currency == self::PRICECURR_BOTH || $model->price_currency == self::PRICECURR_VND;
+            }],
+            ['price_usd', 'required', 'when' => function ($model) {
+                return $model->price_currency == self::PRICECURR_BOTH || $model->price_currency == self::PRICECURR_USD;
+            }],
             [['titleVi', 'titleEn', 'thumbnailVi', 'thumbnailEn'], 'string', 'max' => 255],
             [['summaryVi', 'summaryEn'], 'string', 'max' => 500],
             [['contentVi', 'contentEn'], 'string'],
-            [['category_id', 'price', 'price_usd'], 'integer'],
+            ['category_id', 'integer'],
+            [['price', 'price_usd'], 'integer', 'min' => 0],
             [['for', 'type', 'price_type', 'price_currency', 'location'], 'safe'],
         ];
     }
@@ -70,7 +77,7 @@ class Product extends \yii\db\ActiveRecord
             'for' => 'Hình thức',
             'type' => 'Kiểu',
             'price_type' => 'Theo',
-            'price_currency' => 'Hiển thị',
+            'price_currency' => 'Hiển thị đơn giá theo',
             'location' => 'Địa điểm',
         ];
     }

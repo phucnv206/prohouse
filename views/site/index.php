@@ -82,7 +82,7 @@ if ($type == Product::TYPE_OFFICE) {
                                             <div class="news-proce">
                                                 <?=Helpers::getPriceLabel($product['for'])?>:
                                                 <span style="color:#dd5626">
-                                                    <?=Helpers::getPriceFormat($mainProduct)?>
+                                                    <?=Helpers::getPriceFormat($product)?>
                                                 </span>
                                             </div>
                                         </div>
