@@ -1,6 +1,6 @@
 <?php
 
-$params = require(__DIR__ . '/params.php');
+$params = require __DIR__ . '/params.php';
 $config = [
     'language' => 'en-US',
     'id' => 'prohouse',
@@ -16,7 +16,7 @@ $config = [
     ],
     'components' => [
         'init' => [
-            'class' => 'app\components\Init'
+            'class' => 'app\components\Init',
         ],
         'assetManager' => [
             'appendTimestamp' => true,
@@ -31,13 +31,13 @@ $config = [
             'rules' => [
                 '<module:admincp>' => '<module>',
                 '<module:admincp>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-                '/s/for/<for:\d+>' => 'site/search',
-                's/type/<type:\d+>' => 'site/search',
+                '/s/for/<for:\d+>/<title>' => 'site/search',
+                's/type/<type:\d+>/<title>' => 'site/search',
                 's' => 'site/search',
-                'p/<id:\d+>' => 'product/index',
-                'c/<id:\d+>' => 'category/index',
-                'n/<id:\d+>' => 'post/index',
-                'l/<id:\d+>' => 'legal/index',
+                'p/<id:\d+>/<title>' => 'product/index',
+                'c/<id:\d+>/<title>' => 'category/index',
+                'n/<id:\d+>/<title>' => 'post/index',
+                'l/<id:\d+>/<title>' => 'legal/index',
                 'contact' => 'site/contact',
                 'about' => 'site/about',
                 'location' => 'site/location',
@@ -57,7 +57,7 @@ $config = [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
-            'transport' => require(__DIR__ . '/mail.php'),
+            'transport' => require __DIR__ . '/mail.php',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -69,32 +69,32 @@ $config = [
             ],
         ],
 //        'log' => [
-//            'traceLevel' => YII_DEBUG ? 3 : 0,
-//            'targets' => [
-//                [
-//                    'class' => 'yii\log\FileTarget',
-//                    'levels' => ['error', 'warning', 'info'],
-//                    'categories' => ['yii\db\Command::query'],
-//                    'logVars' => [],
-//                ],
-//            ],
-//        ],
-        'db' => require(__DIR__ . '/db.php'),
+        //            'traceLevel' => YII_DEBUG ? 3 : 0,
+        //            'targets' => [
+        //                [
+        //                    'class' => 'yii\log\FileTarget',
+        //                    'levels' => ['error', 'warning', 'info'],
+        //                    'categories' => ['yii\db\Command::query'],
+        //                    'logVars' => [],
+        //                ],
+        //            ],
+        //        ],
+        'db' => require __DIR__ . '/db.php',
     ],
     'params' => $params,
 ];
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
-//    $config['bootstrap'][] = 'debug';
-//    $config['modules']['debug'] = [
-//        'class' => 'yii\debug\Module',
-//    ];
+    //    $config['bootstrap'][] = 'debug';
+    //    $config['modules']['debug'] = [
+    //        'class' => 'yii\debug\Module',
+    //    ];
 
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-    ];
+    // $config['bootstrap'][] = 'gii';
+    // $config['modules']['gii'] = [
+    //     'class' => 'yii\gii\Module',
+    // ];
 }
 
 return $config;

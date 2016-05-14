@@ -3,11 +3,12 @@
 use app\components\Helpers;
 use app\models\Product;
 use yii\helpers\Url;
+$this->title = $model->details[0]->title;
 ?>
 <div class="container">
     <div class="breadcrumb">
         <a href="/">Home</a> >
-        <a href="<?=Url::to(['category/index', 'id' => $model->category->id])?>">
+        <a href="<?=Url::to(['category/index', 'id' => $model->category->id, 'title' => $model->category->details[0]->title])?>">
             <?=$model->category->details[0]->title?>
         </a> >
         <?=$model->details[0]->title?>
@@ -41,7 +42,7 @@ use yii\helpers\Url;
             <?php foreach ($others as $other): ?>
             <div class="moule-show">
                 <div class="news-img">
-                    <a href="<?=Url::to(['product/index', 'id' => $other['id']])?>">
+                    <a href="<?=Url::to(['product/index', 'id' => $other['id'], 'title' => $other->details[0]->title])?>">
                         <img src="<?=$other->details[0]->thumbnail?>" />
                     </a>
                 </div>
@@ -55,12 +56,10 @@ use yii\helpers\Url;
                     <div class="news-readmore">
                         <p><?=$other->details[0]->summary?></p>
                     </div>
-                    <div class="news-proce">
-                        <?=Helpers::getPriceLabel($other['for'])?>: <span style="color:#dd5626">
-                            $<?=Yii::$app->formatter->asDecimal($other['price'], 0)?>
-                            <?php if ($other['for'] == Product::FOR_RENT): ?>
-                                / <?=Yii::t('app', 'month')?>
-                            <?php endif?>
+                    <div class="news-proce pro-price">
+                        <?=Helpers::getPriceLabel($other['for'])?>:
+                        <span>
+                            <?=Helpers::getPriceFormat($other)?>
                         </span>
                     </div>
                 </div>

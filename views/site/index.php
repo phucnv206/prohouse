@@ -2,7 +2,6 @@
 
 use app\components\Helpers;
 use app\models\Product;
-use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 <?=$this->render('/layouts/_slider')?>
@@ -12,14 +11,14 @@ use yii\helpers\Url;
         <?php foreach ($list as $type => $item): ?>
         <div class="module">
             <?php
-$class = '';
-if ($type == Product::TYPE_OFFICE) {
-    $class = 'office';
-} elseif ($type == Product::TYPE_HOUSE) {
-    $class = 'house';
-}
+                $class = '';
+                if ($type == Product::TYPE_OFFICE) {
+                    $class = 'office';
+                } elseif ($type == Product::TYPE_HOUSE) {
+                    $class = 'house';
+                }
 
-?>
+            ?>
             <div class="module-name <?=$class?>">
                 <a><?=Helpers::getType($type)?></a>
                 <div class="dieu_huong">
@@ -39,13 +38,13 @@ if ($type == Product::TYPE_OFFICE) {
                                 <?php $mainProduct = array_shift($page);?>
                                 <div class="col-md-6 moule-show">
                                     <div class="news-img">
-                                        <a title="<?=$mainProduct['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $mainProduct['id']])?>">
+                                        <a title="<?=$mainProduct['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $mainProduct['id'], 'title' => $mainProduct['details'][0]['title']])?>">
                                             <img alt="<?=$mainProduct['details'][0]['title']?>" src="<?=$mainProduct['details'][0]['thumbnail']?>" />
                                         </a>
                                     </div>
                                     <div class="des">
                                         <div class="news-name">
-                                            <a href="<?=Url::to(['product/index', 'id' => $mainProduct['id']])?>"><?=$mainProduct['details'][0]['title']?></a>
+                                            <a href="<?=Url::to(['product/index', 'id' => $mainProduct['id'], 'title' => $mainProduct['details'][0]['title']])?>"><?=$mainProduct['details'][0]['title']?></a>
                                         </div>
                                         <div class="news-cate">
                                             <a><?=Helpers::getFor($mainProduct['for'])?></a>
@@ -65,13 +64,13 @@ if ($type == Product::TYPE_OFFICE) {
                                     <?php foreach ($page as $product): ?>
                                     <div class="module-item">
                                         <div class="module-item-img col-xs-5 col-md-4">
-                                            <a title="<?=$product['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $product['id']])?>">
+                                            <a title="<?=$product['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => $product['details'][0]['title']])?>">
                                                 <img alt="<?=$product['details'][0]['title']?>" src="<?=$product['details'][0]['thumbnail']?>" />
                                             </a>
                                         </div>
                                         <div class="module-item-des col-md-8">
                                             <div class="news-name">
-                                                <a href="<?=Url::to(['product/index', 'id' => $product['id']])?>"><?=$product['details'][0]['title']?></a>
+                                                <a href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => $product['details'][0]['title']])?>"><?=$product['details'][0]['title']?></a>
                                             </div>
                                             <div class="news-cate">
                                                 <a><?=Helpers::getFor($product['for'])?></a>
@@ -98,39 +97,13 @@ if ($type == Product::TYPE_OFFICE) {
         <?php endforeach?>
     </div>
     <div class="col-md-4 col-right">
-        <div class="box-option">
-            <?=Html::beginForm(Url::to(['site/search']), 'get')?>
-                <?=Html::dropDownList('type', null, Helpers::getType(), ['class' => 'col6'])?>
-                <?=Html::dropDownList('for', null, Helpers::getFor(), ['class' => 'col6'])?>
-                <?=Html::dropDownList('location', null, Helpers::getLocations(), ['class' => 'col7'])?>
-                <?=Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary col5'])?>
-            <?=Html::endForm()?>
-        </div>
-        <div class="qc">
-            <?php foreach ($ads as $ad): ?>
-                <?php if (empty($ad->url)): ?>
-                    <img src="<?=$ad->image?>" />
-                <?php else: ?>
-                    <a href="<?=$ad->url?>"><img src="<?=$ad->image?>" /></a>
-                <?php endif?>
-            <?php endforeach?>
-        </div>
-        <div class="news-feature">
-            <h5><?=Yii::t('app', 'NEWS')?></h5>
-            <div class="show-news">
-                <?php foreach ($posts as $post): ?>
-                    <div class="show-news-item col-md-6">
-                        <div class="img-news">
-                            <a href="<?=Url::to(['post/index', 'id' => $post->id])?>"><img src="<?=$post->details[0]->thumbnail?>" /></a>
-                        </div>
-                        <div class="name-news">
-                            <p><a style="color: black; font-size: 14px;" href="<?=Url::to(['post/index', 'id' => $post->id])?>"><?=$post->details[0]->title?></a></p>
-                        </div>
-                    </div>
-                <?php endforeach?>
-
-            </div>
-        </div>
+        <?=$this->render('_rightbox', [
+            'ads' => $ads,
+            'posts' => $posts,
+            'type' => null,
+            'for' => null,
+            'location' => null
+        ])?>
     </div>
 
 </div>

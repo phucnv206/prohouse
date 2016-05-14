@@ -1,3 +1,6 @@
+<?php
+    $this->title = $model->details[0]->title;
+?>
 <div class="container">
     <div class="breadcrumb">
         <p>

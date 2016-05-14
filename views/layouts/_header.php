@@ -15,7 +15,7 @@ use yii\helpers\Url;
                         <?php foreach ($categories = Helpers::listCategories() as $i => $category): ?>
                             <?php if ($i <= 4): ?>
                                 <li>
-                                    <?=Html::a($category->details[0]->title, ['category/index', 'id' => $category->id])?>
+                                    <?=Html::a($category->details[0]->title, ['category/index', 'id' => $category->id, 'title' => $category->details[0]->title])?>
                                     <?php if ($i + 1 < count($categories)): ?>
                                         <span style="color:#7c7c7c"> | </span>
                                     <?php endif?>
@@ -30,7 +30,7 @@ use yii\helpers\Url;
                                             </a>
                                             <ul class="dropdown-menu">
                                             <?php endif?>
-                                            <li><?=Html::a($category->details[0]->title, ['category/index', 'id' => $category->id])?></li>
+                                            <li><?=Html::a($category->details[0]->title, ['category/index', 'id' => $category->id, 'title' => $category->details[0]->title])?></li>
                                             <?php if (count($categories) === $i + 1): ?>
                                             </ul>
                                         </div>
@@ -65,19 +65,19 @@ use yii\helpers\Url;
                 <div class="col-md-7  main-menu pull-right" id='cssmenu'>
                     <ul>
                         <li>
-                            <a title="<?=Yii::t('app', 'Apartment')?>" href="<?=Url::to(['site/search', 'type' => Product::TYPE_APARTMENT])?>"><?=Yii::t('app', 'Apartment')?></a>
+                            <a title="<?=Yii::t('app', 'Apartment')?>" href="<?=Url::to(['site/search', 'type' => Product::TYPE_APARTMENT, 'title' => Yii::t('app', 'Apartment')])?>"><?=Yii::t('app', 'Apartment')?></a>
                         </li>
                         <li>
-                            <a title="<?=Yii::t('app', 'House')?>" href="<?=Url::to(['site/search', 'type' => Product::TYPE_HOUSE])?>"><?=Yii::t('app', 'House')?></a>
+                            <a title="<?=Yii::t('app', 'House')?>" href="<?=Url::to(['site/search', 'type' => Product::TYPE_HOUSE, 'title' => Yii::t('app', 'House')])?>"><?=Yii::t('app', 'House')?></a>
                         </li>
                         <li>
-                            <a title="<?=Yii::t('app', 'Office')?>" href="<?=Url::to(['site/search', 'type' => Product::TYPE_OFFICE])?>"><?=Yii::t('app', 'Office')?></a>
+                            <a title="<?=Yii::t('app', 'Office')?>" href="<?=Url::to(['site/search', 'type' => Product::TYPE_OFFICE, 'title' => Yii::t('app', 'Office')])?>"><?=Yii::t('app', 'Office')?></a>
                         </li>
                         <li>
-                            <a title="<?=Yii::t('app', 'For lease')?>" href="<?=Url::to(['site/search', 'for' => Product::FOR_RENT])?>"><?=Yii::t('app', 'For lease')?></a>
+                            <a title="<?=Yii::t('app', 'For lease')?>" href="<?=Url::to(['site/search', 'for' => Product::FOR_RENT, 'title' => Yii::t('app', 'For lease')])?>"><?=Yii::t('app', 'For lease')?></a>
                         </li>
                         <li>
-                            <a title="<?=Yii::t('app', 'For sales')?>" href="<?=Url::to(['site/search', 'for' => Product::FOR_SALE])?>"><?=Yii::t('app', 'For sales')?></a>
+                            <a title="<?=Yii::t('app', 'For sales')?>" href="<?=Url::to(['site/search', 'for' => Product::FOR_SALE, 'title' => Yii::t('app', 'For sales')])?>"><?=Yii::t('app', 'For sales')?></a>
                         </li>
                         <li style="position: relative" class="legal-btn">
                             <a title="<?=Yii::t('app', 'Legal')?>" href="#">
@@ -85,7 +85,7 @@ use yii\helpers\Url;
                             </a>
                             <div class="legal-dropdown">
                                 <?php foreach (Helpers::listLegal() as $idx => $legal): ?>
-                                <a href="<?=Url::to(['legal/index', 'id' => $legal->id])?>">
+                                <a href="<?=Url::to(['legal/index', 'id' => $legal->id, 'title' => $legal->details[0]->title])?>">
                                     <?=$legal->details[0]->title?>
                                 </a>
                                 <?php if ($idx === 0): ?>

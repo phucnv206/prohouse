@@ -1,25 +1,26 @@
 <?php
 
 use yii\helpers\Url;
+$this->title = $model->details[0]->title;
 ?>
-<?= $this->render('/layouts/_slider', ['images' => $images]) ?>
+<?=$this->render('/layouts/_slider', ['images' => $images])?>
 
 <div class="container">
     <div class="menu-content">
         <ul class="nav nav-tabs" data-spy="affix" data-offset-top="524" data-offset-bottom="200">
             <?php foreach ($infos as $i => $info): ?>
-                <li class="<?= $i === 0 ? 'active' : '' ?>"><a data-toggle="tab" href="#info_<?= $info->id ?>"><?= $info->details[0]->title ?></a></li>
-            <?php endforeach ?>
-            <li><a class="btn-primary contact-btn" href="<?= Url::to(['site/contact']) ?>">0917 187 909</a></li>
+                <li class="<?=$i === 0 ? 'active' : ''?>"><a data-toggle="tab" href="#info_<?=$info->id?>"><?=$info->details[0]->title?></a></li>
+            <?php endforeach?>
+            <li><a class="btn-primary contact-btn" href="<?=Url::to(['site/contact'])?>">0917 187 909</a></li>
         </ul>
         <div class="tab-content">
             <?php foreach ($infos as $i => $info): ?>
-                <div id="info_<?= $info->id ?>" class="tab-pane fade <?= $i === 0 ? 'in active' : '' ?>">
+                <div id="info_<?=$info->id?>" class="tab-pane fade <?=$i === 0 ? 'in active' : ''?>">
                     <br>
-                    <div class="responsive-content"><?= $info->details[0]->content ?></div>
+                    <div class="responsive-content"><?=$info->details[0]->content?></div>
                     <br>
                 </div>
-            <?php endforeach ?>
+            <?php endforeach?>
         </div>
     </div>
 </div>

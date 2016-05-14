@@ -13,6 +13,7 @@ return [
     'RENTAL' => 'PHÍ',
     'PRICE' => 'GIÁ',
     'Search' => 'Tìm',
+    'Result' => 'Kết quả tìm kiếm',
     'No results found' => 'Không tìm thấy kết quả',
     'NEWS' => 'TIN TỨC',
     'Contact us' => 'Liên hệ ngay',
