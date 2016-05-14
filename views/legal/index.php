@@ -1,3 +1,6 @@
+<?php
+    $this->title = $model->details[0]->title;
+?>
 <div class="container">
     <div class="legal-title"><?= $model->details[0]->title ?></div>
     <div class="text-justify responsive-content">
