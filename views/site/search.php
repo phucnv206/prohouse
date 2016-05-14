@@ -22,13 +22,13 @@ $this->title = $title;
             <?php foreach ($products as $i => $product): ?>
             <div class="col-md-6 moule-show" style="padding: 0 10px; height: 360px;">
                 <div class="news-img">
-                    <a title="<?=$product['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => $product['details'][0]['title']])?>">
+                    <a title="<?=$product['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => Helpers::getSlug($product['details'][0]['title'])])?>">
                         <img alt="<?=$product['details'][0]['title']?>" src="<?=$product['details'][0]['thumbnail']?>" />
                     </a>
                 </div>
                 <div class="des">
                     <div class="news-name">
-                        <a href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => $product['details'][0]['title']])?>"><?=$product['details'][0]['title']?></a>
+                        <a href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => Helpers::getSlug($product['details'][0]['title'])])?>"><?=$product['details'][0]['title']?></a>
                     </div>
                     <div class="news-cate">
                         <a><?=Helpers::getFor($product['for'])?></a>

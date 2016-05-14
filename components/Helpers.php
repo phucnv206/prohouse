@@ -2,6 +2,7 @@
 
 namespace app\components;
 
+use yii\helpers\Inflector;
 use app\models\Category;
 use app\models\Legal;
 use app\models\Slide;
@@ -95,6 +96,11 @@ class Helpers extends \yii\base\Component
             case \app\modules\admincp\models\Product::PRICECURR_USD:
                 return $priceUsd . $suffix;
         }
+    }
+
+    public static function getSlug($string)
+    {
+        return Inflector::slug($string);
     }
 
 }

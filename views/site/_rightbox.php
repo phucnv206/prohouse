@@ -26,10 +26,10 @@ use app\components\Helpers;
         <?php foreach ($posts as $post): ?>
         <div class="show-news-item col-md-6">
             <div class="img-news">
-                <a href="<?=Url::to(['post/index', 'id' => $post->id, 'title' => $post['details'][0]['title']])?>"><img src="<?=$post->details[0]->thumbnail?>" /></a>
+                <a href="<?=Url::to(['post/index', 'id' => $post->id, 'title' => Helpers::getSlug($post->details[0]->title)])?>"><img src="<?=$post->details[0]->thumbnail?>" /></a>
             </div>
             <div class="name-news">
-                <p><a style="color: black; font-size: 14px;" href="<?=Url::to(['post/index', 'id' => $post->id, 'title' => $post['details'][0]['title']])?>"><?=$post->details[0]->title?></a></p>
+                <p><a style="color: black; font-size: 14px;" href="<?=Url::to(['post/index', 'id' => $post->id, Helpers::getSlug($post->details[0]->title)])?>"><?=$post->details[0]->title?></a></p>
             </div>
         </div>
         <?php endforeach?>

@@ -38,13 +38,13 @@ use yii\helpers\Url;
                                 <?php $mainProduct = array_shift($page);?>
                                 <div class="col-md-6 moule-show">
                                     <div class="news-img">
-                                        <a title="<?=$mainProduct['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $mainProduct['id'], 'title' => $mainProduct['details'][0]['title']])?>">
+                                        <a title="<?=$mainProduct['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $mainProduct['id'], 'title' => Helpers::getSlug($mainProduct['details'][0]['title'])])?>">
                                             <img alt="<?=$mainProduct['details'][0]['title']?>" src="<?=$mainProduct['details'][0]['thumbnail']?>" />
                                         </a>
                                     </div>
                                     <div class="des">
                                         <div class="news-name">
-                                            <a href="<?=Url::to(['product/index', 'id' => $mainProduct['id'], 'title' => $mainProduct['details'][0]['title']])?>"><?=$mainProduct['details'][0]['title']?></a>
+                                            <a href="<?=Url::to(['product/index', 'id' => $mainProduct['id'], 'title' => Helpers::getSlug($mainProduct['details'][0]['title'])])?>"><?=$mainProduct['details'][0]['title']?></a>
                                         </div>
                                         <div class="news-cate">
                                             <a><?=Helpers::getFor($mainProduct['for'])?></a>
@@ -64,13 +64,13 @@ use yii\helpers\Url;
                                     <?php foreach ($page as $product): ?>
                                     <div class="module-item">
                                         <div class="module-item-img col-xs-5 col-md-4">
-                                            <a title="<?=$product['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => $product['details'][0]['title']])?>">
+                                            <a title="<?=$product['details'][0]['title']?>" href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => Helpers::getSlug($product['details'][0]['title'])])?>">
                                                 <img alt="<?=$product['details'][0]['title']?>" src="<?=$product['details'][0]['thumbnail']?>" />
                                             </a>
                                         </div>
                                         <div class="module-item-des col-md-8">
                                             <div class="news-name">
-                                                <a href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => $product['details'][0]['title']])?>"><?=$product['details'][0]['title']?></a>
+                                                <a href="<?=Url::to(['product/index', 'id' => $product['id'], 'title' => Helpers::getSlug($product['details'][0]['title'])])?>"><?=$product['details'][0]['title']?></a>
                                             </div>
                                             <div class="news-cate">
                                                 <a><?=Helpers::getFor($product['for'])?></a>

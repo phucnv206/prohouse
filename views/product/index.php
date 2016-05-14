@@ -8,7 +8,7 @@ $this->title = $model->details[0]->title;
 <div class="container">
     <div class="breadcrumb">
         <a href="/">Home</a> >
-        <a href="<?=Url::to(['category/index', 'id' => $model->category->id, 'title' => $model->category->details[0]->title])?>">
+        <a href="<?=Url::to(['category/index', 'id' => $model->category->id, 'title' => Helpers::getSlug($model->category->details[0]->title)])?>">
             <?=$model->category->details[0]->title?>
         </a> >
         <?=$model->details[0]->title?>
@@ -42,7 +42,7 @@ $this->title = $model->details[0]->title;
             <?php foreach ($others as $other): ?>
             <div class="moule-show">
                 <div class="news-img">
-                    <a href="<?=Url::to(['product/index', 'id' => $other['id'], 'title' => $other->details[0]->title])?>">
+                    <a href="<?=Url::to(['product/index', 'id' => $other['id'], 'title' => Helpers::getSlug($other->details[0]->title)])?>">
                         <img src="<?=$other->details[0]->thumbnail?>" />
                     </a>
                 </div>
