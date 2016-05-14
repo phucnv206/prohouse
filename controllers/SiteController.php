@@ -2,19 +2,19 @@
 
 namespace app\controllers;
 
+use app\components\Helpers;
+use app\models\Ads;
+use app\models\Message;
+use app\models\Page;
+use app\models\Post;
+use app\models\Product;
+use app\models\User;
 use Yii;
 use yii\web\Controller;
-use app\models\Product;
-use app\models\Post;
-use app\components\Helpers;
-use app\models\User;
-use app\models\Ads;
-use app\models\Page;
-use app\models\Message;
 
 class SiteController extends Controller
 {
-    
+
     public function actions()
     {
         return [
@@ -26,11 +26,11 @@ class SiteController extends Controller
 
     public function actionIndex($test = null)
     {
-        if ($test) {
-            Yii::$app->session->set('test', true);
-            return $this->goHome();
-        }
-        if (!Yii::$app->session->has('test')) die('Coming soon...');
+        // if ($test) {
+        //     Yii::$app->session->set('test', true);
+        //     return $this->goHome();
+        // }
+        // if (!Yii::$app->session->has('test')) die('Coming soon...');
         $products = Product::find()->with('details')->orderBy('type, id DESC')->asArray()->all();
         $list = [];
         foreach ($products as $product) {
@@ -49,10 +49,10 @@ class SiteController extends Controller
         return $this->render('index', [
             'list' => $list,
             'posts' => $posts,
-            'ads' => $ads
+            'ads' => $ads,
         ]);
     }
-    
+
     public function actionSearch($type = null, $for = null, $location = null)
     {
         $query = Product::find()->with('details')->orderBy('id DESC');
@@ -77,10 +77,10 @@ class SiteController extends Controller
             'type' => $type,
             'for' => $for,
             'location' => $location,
-            'ads' => $ads
+            'ads' => $ads,
         ]);
     }
-    
+
     public function actionContact()
     {
         $model = new Message();
@@ -93,10 +93,10 @@ class SiteController extends Controller
             $model->save();
             $user = User::findOne(1);
             Yii::$app->mailer->compose('contact', ['model' => $model])
-            ->setFrom(Yii::$app->params['mailUser'])
-            ->setTo($user->email)
-            ->setSubject('Thông tin liên hệ - ' . Yii::$app->params['title'])
-            ->send();
+                ->setFrom(Yii::$app->params['mailUser'])
+                ->setTo($user->email)
+                ->setSubject('Thông tin liên hệ - ' . Yii::$app->params['title'])
+                ->send();
             Yii::$app->session->setFlash('success', Yii::t('app', 'Message has been sent successfully!'));
             return $this->refresh();
         } else {
